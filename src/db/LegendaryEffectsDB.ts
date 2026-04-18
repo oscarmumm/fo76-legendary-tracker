@@ -9,7 +9,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '2',
@@ -18,7 +18,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '3',
@@ -27,7 +27,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '4',
@@ -36,7 +36,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '5',
@@ -45,7 +45,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '6',
@@ -54,7 +54,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '7',
@@ -63,7 +63,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '8',
@@ -72,7 +72,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '9',
@@ -81,7 +81,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '10',
@@ -90,7 +90,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '11',
@@ -99,7 +99,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '12',
@@ -108,7 +108,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '13',
@@ -117,7 +117,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '14',
@@ -126,7 +126,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '15',
@@ -135,7 +135,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '16',
@@ -144,7 +144,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '17',
@@ -153,7 +153,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '18',
@@ -162,7 +162,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '19',
@@ -171,7 +171,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '20',
@@ -180,7 +180,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '21',
@@ -189,7 +189,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '22',
@@ -198,7 +198,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '23',
@@ -207,7 +207,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '24',
@@ -216,7 +216,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '25',
@@ -225,7 +225,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '26',
@@ -234,7 +234,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '27',
@@ -243,7 +243,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '28',
@@ -252,7 +252,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '29',
@@ -261,7 +261,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '30',
@@ -270,7 +270,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '31',
@@ -279,7 +279,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '32',
@@ -288,7 +288,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '33',
@@ -297,7 +297,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '34',
@@ -306,7 +306,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '35',
@@ -315,7 +315,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '36',
@@ -324,7 +324,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '37',
@@ -333,7 +333,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '38',
@@ -342,7 +342,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '39',
@@ -351,7 +351,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '40',
@@ -360,7 +360,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
 
     // ⭐⭐ 2 STARS
@@ -371,7 +371,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '42',
@@ -380,7 +380,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '43',
@@ -389,7 +389,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '44',
@@ -398,7 +398,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '45',
@@ -407,7 +407,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '46',
@@ -416,7 +416,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '47',
@@ -425,7 +425,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '48',
@@ -434,7 +434,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '49',
@@ -443,7 +443,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '50',
@@ -452,7 +452,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '51',
@@ -461,7 +461,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '52',
@@ -470,7 +470,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '53',
@@ -479,7 +479,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '54',
@@ -488,7 +488,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '55',
@@ -497,7 +497,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '56',
@@ -506,7 +506,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '57',
@@ -515,7 +515,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '58',
@@ -524,7 +524,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '59',
@@ -533,7 +533,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '60',
@@ -542,7 +542,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '61',
@@ -551,7 +551,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '62',
@@ -560,7 +560,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '63',
@@ -569,7 +569,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '64',
@@ -578,7 +578,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '65',
@@ -587,7 +587,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '66',
@@ -596,7 +596,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '67',
@@ -605,7 +605,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '68',
@@ -614,7 +614,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '69',
@@ -623,7 +623,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '70',
@@ -632,7 +632,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '71',
@@ -641,7 +641,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '72',
@@ -650,7 +650,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '73',
@@ -659,7 +659,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '74',
@@ -668,7 +668,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '75',
@@ -677,7 +677,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '76',
@@ -686,7 +686,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '77',
@@ -695,7 +695,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '78',
@@ -704,7 +704,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
 
     // ⭐⭐⭐ 3 STARS
@@ -715,7 +715,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '80',
@@ -724,7 +724,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '81',
@@ -733,7 +733,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '82',
@@ -742,7 +742,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '83',
@@ -751,7 +751,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '84',
@@ -760,7 +760,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '85',
@@ -769,7 +769,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '86',
@@ -778,7 +778,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '87',
@@ -787,7 +787,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '88',
@@ -796,7 +796,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '89',
@@ -805,7 +805,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '90',
@@ -814,7 +814,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '91',
@@ -823,7 +823,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '92',
@@ -832,7 +832,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '93',
@@ -841,7 +841,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '94',
@@ -850,7 +850,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '95',
@@ -859,7 +859,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '96',
@@ -868,7 +868,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '97',
@@ -877,7 +877,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '98',
@@ -886,7 +886,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '99',
@@ -895,7 +895,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '100',
@@ -904,7 +904,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '101',
@@ -913,7 +913,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '102',
@@ -922,7 +922,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '103',
@@ -931,7 +931,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '104',
@@ -940,7 +940,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '105',
@@ -949,7 +949,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '106',
@@ -958,7 +958,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '107',
@@ -967,7 +967,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '108',
@@ -976,7 +976,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '109',
@@ -985,7 +985,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
 
     // ⭐⭐⭐⭐ 4 STARS
@@ -996,7 +996,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '111',
@@ -1005,7 +1005,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '112',
@@ -1014,7 +1014,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '113',
@@ -1023,7 +1023,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '114',
@@ -1032,7 +1032,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '115',
@@ -1041,7 +1041,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '116',
@@ -1050,7 +1050,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '117',
@@ -1059,7 +1059,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '118',
@@ -1068,7 +1068,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '119',
@@ -1077,7 +1077,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '120',
@@ -1086,7 +1086,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '121',
@@ -1095,7 +1095,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '122',
@@ -1104,7 +1104,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '123',
@@ -1113,7 +1113,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '124',
@@ -1122,7 +1122,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '125',
@@ -1131,7 +1131,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '126',
@@ -1140,7 +1140,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '127',
@@ -1149,7 +1149,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '128',
@@ -1158,7 +1158,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '129',
@@ -1167,7 +1167,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '130',
@@ -1176,7 +1176,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '131',
@@ -1185,7 +1185,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '132',
@@ -1194,7 +1194,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '133',
@@ -1203,7 +1203,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '134',
@@ -1212,7 +1212,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '135',
@@ -1221,7 +1221,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '136',
@@ -1230,7 +1230,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '137',
@@ -1239,7 +1239,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '138',
@@ -1248,7 +1248,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '139',
@@ -1257,7 +1257,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '140',
@@ -1266,7 +1266,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
     {
         id: '141',
@@ -1275,6 +1275,6 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '',
         category: '',
         ghoul: false,
-        unlocked: true,
+        unlocked: false,
     },
 ];
