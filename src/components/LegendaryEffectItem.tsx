@@ -36,7 +36,7 @@ export const LegendaryEffectItem = ({
                     )}
                 </button>
             </li>
-            {open && <p className="p-1 text-base italic text-gray-200 bg-gray-700 rounded-bl-lg rounded-br-lg">{effect.description}</p>}
+            {open && <p className="p-3 text-base italic text-gray-200 bg-gray-700 rounded-bl-lg rounded-br-lg">{effect.description}</p>}
         </>
     );
 };
