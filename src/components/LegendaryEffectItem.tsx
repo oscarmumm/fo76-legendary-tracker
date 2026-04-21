@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { FaUnlock, FaLock } from 'react-icons/fa';
 import type { LegendaryEffect } from '../types';
+import { FaUnlock, FaLock } from 'react-icons/fa';
 
 type LegendaryEffectItemProps = {
     effect: LegendaryEffect;
@@ -20,12 +20,12 @@ export const LegendaryEffectItem = ({
     return (
         <li key={effect.id} className='flex flex-col mt-3'>
             <div className='flex justify-between'>
-                <p
+                <div
                     onClick={toggleDescription}
-                    className='p-1 cursor-pointer hover:bg-gray-700'
+                    className='p-3 flex items-center cursor-pointer rounded-xl hover:bg-gray-700'
                 >
-                    {effect.name}
-                </p>
+                    <span className='p-1 hover:bg-gray-700'>{effect.name}</span>
+                </div>
                 <button
                     className='p-3 cursor-pointer rounded-xl hover:scale-125 hover:bg-gray-700'
                     onClick={() => toggleUnlockedEffect(effect.id)}
