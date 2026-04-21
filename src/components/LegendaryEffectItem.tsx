@@ -4,6 +4,7 @@ import { FaUnlock, FaLock } from 'react-icons/fa';
 import { FaGun } from 'react-icons/fa6';
 import { LuSword } from 'react-icons/lu';
 import { GiShoulderArmor, GiBlackKnightHelm } from 'react-icons/gi';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 type LegendaryEffectItemProps = {
     effect: LegendaryEffect;
@@ -37,6 +38,7 @@ export const LegendaryEffectItem = ({
                     onClick={toggleDescription}
                     className="p-3 flex items-center cursor-pointer rounded-xl hover:bg-gray-700">
                     <span className="p-1 hover:bg-gray-700">{effect.name}</span>
+                    <MdKeyboardArrowDown />
                     <div className='flex'>
                         {effect.category.map((cat) => (
                             <span className='ml-3 text-sky-400'>{categoryIcons[cat]}</span>
