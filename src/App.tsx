@@ -5,13 +5,12 @@ import { LegendaryEffectItem } from './components/LegendaryEffectItem';
 import { AnimatePresence, motion } from 'motion/react';
 // ICONS
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { FaMagnifyingGlass } from 'react-icons/fa6';
+// import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { FaUnlock, FaLock, FaRadiation } from 'react-icons/fa';
 import { IoMdPerson } from 'react-icons/io';
 import { FaGun } from 'react-icons/fa6';
 import { LuSword } from 'react-icons/lu';
-import { GiChestArmor } from 'react-icons/gi';
-import { GiShoulderArmor } from 'react-icons/gi';
+import { GiBlackKnightHelm, GiShoulderArmor } from 'react-icons/gi';
 
 const filterListAnimation = {
     visible: {
@@ -204,14 +203,14 @@ function App() {
                                         className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
                                         onClick={filterByArmor}
                                     >
-                                        <GiChestArmor />
+                                        <GiShoulderArmor />
                                         <span className='ml-3'>Armaduras</span>
                                     </li>
                                     <li
                                         className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
                                         onClick={filterByPowerArmor}
                                     >
-                                        <GiShoulderArmor />
+                                        <GiBlackKnightHelm />
                                         <span className='ml-3'>
                                             Servoarmaduras
                                         </span>
