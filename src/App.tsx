@@ -11,6 +11,7 @@ import { IoMdPerson } from 'react-icons/io';
 import { FaGun } from 'react-icons/fa6';
 import { LuSword } from 'react-icons/lu';
 import { GiBlackKnightHelm, GiShoulderArmor } from 'react-icons/gi';
+import { Footer } from './components/Footer';
 
 const filterListAnimation = {
     visible: {
@@ -392,6 +393,7 @@ function App() {
                     )}
                 </section>
             </div>
+            <Footer />
         </main>
     );
 }

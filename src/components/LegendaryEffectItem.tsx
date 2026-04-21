@@ -32,12 +32,12 @@ export const LegendaryEffectItem = ({
     };
 
     return (
-        <li key={effect.id} className="flex flex-col mt-3">
+        <li key={effect.id} className="flex flex-col mt-3 text-lg">
             <div className="flex justify-between">
                 <div
                     onClick={toggleDescription}
-                    className="p-3 flex items-center cursor-pointer rounded-xl hover:bg-gray-700">
-                    <span className="p-1 hover:bg-gray-700">{effect.name}</span>
+                    className="py-3 px-1 flex items-center cursor-pointer rounded-xl hover:bg-gray-700">
+                    <span className="hover:bg-gray-700">{effect.name}</span>
                     <MdKeyboardArrowDown />
                     <div className='flex'>
                         {effect.category.map((cat) => (
