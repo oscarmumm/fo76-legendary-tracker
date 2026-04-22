@@ -36,12 +36,16 @@ export const LegendaryEffectItem = ({
             <div className="flex justify-between">
                 <div
                     onClick={toggleDescription}
-                    className="py-3 px-1 flex items-center cursor-pointer rounded-xl hover:bg-gray-700">
-                    <span className="hover:bg-gray-700">{effect.name}</span>
-                    <MdKeyboardArrowDown />
-                    <div className='flex'>
+                    className="py-3 px-1 flex items-center justify-between w-full cursor-pointer rounded-xl hover:bg-gray-700">
+                    <div className='flex items-center'>
+                        <span className="hover:bg-gray-700 mr-3">{effect.name}</span>
+                        <MdKeyboardArrowDown />
+                    </div>
+                    <div className="flex">
                         {effect.category.map((cat) => (
-                            <span className='ml-3 text-sky-400'>{categoryIcons[cat]}</span>
+                            <span className="ml-3 text-sky-400">
+                                {categoryIcons[cat]}
+                            </span>
                         ))}
                     </div>
                 </div>
