@@ -5,6 +5,7 @@ import { FaGun } from 'react-icons/fa6';
 import { LuSword } from 'react-icons/lu';
 import { GiShoulderArmor, GiBlackKnightHelm } from 'react-icons/gi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { BsArrow90DegUp } from 'react-icons/bs';
 
 type LegendaryEffectItemProps = {
     effect: LegendaryEffect;
@@ -37,8 +38,10 @@ export const LegendaryEffectItem = ({
                 <div
                     onClick={toggleDescription}
                     className="py-3 px-1 flex items-center justify-between w-full cursor-pointer rounded-xl hover:bg-gray-700">
-                    <div className='flex items-center'>
-                        <span className="hover:bg-gray-700 mr-3">{effect.name}</span>
+                    <div className="flex items-center">
+                        <span className="hover:bg-gray-700 mr-3">
+                            {effect.name}
+                        </span>
                         <MdKeyboardArrowDown />
                     </div>
                     <div className="flex">
@@ -60,8 +63,11 @@ export const LegendaryEffectItem = ({
                 </button>
             </div>
             {open && (
-                <p className="p-3 text-base italic text-gray-200 bg-gray-700 rounded-xl">
-                    {effect.description}
+                <p className="p-3 flex text-base italic text-gray-200 bg-gray-700 rounded-xl">
+                    <span>
+                        <BsArrow90DegUp className='text-lg' />
+                    </span>
+                    <span className='pl-1'>{effect.description}</span>
                 </p>
             )}
         </li>
