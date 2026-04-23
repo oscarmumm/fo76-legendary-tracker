@@ -50,7 +50,7 @@ export const LegendaryEffectItem = ({
                     </div>
                 </div>
                 <button
-                    className="p-3 cursor-pointer rounded-xl hover:scale-125 hover:bg-gray-700"
+                    className="p-3 text-xl cursor-pointer rounded-xl hover:scale-125 hover:bg-gray-700"
                     onClick={() => toggleUnlockedEffect(effect.id)}>
                     {effect.unlocked ? (
                         <FaUnlock className="text-green-500" />

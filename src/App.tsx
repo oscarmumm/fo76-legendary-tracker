@@ -113,105 +113,149 @@ function App() {
         openAllEffectsColumns();
     };
 
-    useEffect(() => {
-        setFilteredData(effects);
-    }, [effects]);
+    // useEffect(() => {
+    //     setFilteredData(effects);
+    // }, [effects]);
 
+    useEffect(() => {
+        switch (activeFilter) {
+            case 'Todos':
+                resetFilters();
+                break;
+            case 'Bloqueados':
+                filterByLocked();
+                break;
+            case 'Desbloqueados':
+                filterByUnlocked();
+                break;
+            case 'Solo humanos':
+                filterByOnlyHuman();
+                break;
+            case 'Solo necrófagos':
+                filterByOnlyGhoul();
+                break;
+            case 'Armas a distancia':
+                filterByRanged();
+                break;
+            case 'Armas cuerpo a cuerpo':
+                filterByMelee();
+                break;
+            case 'Armaduras':
+                filterByArmor();
+                break;
+            case 'Servoarmaduras':
+                filterByPowerArmor();
+                break;
+            default:
+                setFilteredData(effects);
+        }
+    }, [activeFilter, effects]);
     return (
-        <div className="bg-gray-900 text-slate-50 min-h-screen flex flex-col justify-between">
+        <div className='bg-gray-900 text-slate-50 min-h-screen flex flex-col justify-between'>
             <div>
                 <Header />
-                <main className="bg-gray-900 text-slate-50 flex flex-col">
-                    <div className="flex items-center justify-center">
-                        <div className="p-5 m-3 max-w-2xl flex flex-col gap-5 md:items-center md:justify-center md:flex-row shadow-md rounded-xl bg-gray-800">
+                <main className='bg-gray-900 text-slate-50 flex flex-col'>
+                    <div className='flex items-center justify-center'>
+                        <div className='p-5 m-3 max-w-2xl flex flex-col gap-5 md:items-center md:justify-center md:flex-row shadow-md rounded-xl bg-gray-800'>
                             {/* FILTERS */}
-                            <div className="flex flex-col">
-                                <h2 className="p-1 text-lg">Filtros</h2>
+                            <div className='flex flex-col'>
+                                <h2 className='p-1 text-lg'>Filtros</h2>
                                 <button
-                                    className="p-3 min-w-72 relative flex justify-between bg-gray-700 hover:bg-gray-600 rounded-xl cursor-pointer"
+                                    className='p-3 min-w-72 relative flex justify-between bg-gray-700 hover:bg-gray-600 rounded-xl cursor-pointer'
                                     onClick={() =>
                                         setFilterListOpen(!filterListOpen)
-                                    }>
-                                    <span className="text-lg">
+                                    }
+                                >
+                                    <span className='text-lg'>
                                         {activeFilter}
                                     </span>
-                                    <MdKeyboardArrowDown className="text-3xl" />
+                                    <MdKeyboardArrowDown className='text-3xl' />
                                 </button>
                                 <AnimatePresence>
                                     {filterListOpen && (
                                         <motion.ul
                                             variants={filterListAnimation}
-                                            initial="hidden"
-                                            whileInView="visible"
-                                            exit="hidden"
+                                            initial='hidden'
+                                            whileInView='visible'
+                                            exit='hidden'
                                             transition={{ duration: 0.2 }}
-                                            className="absolute mt-9 min-w-72 bg-gray-600 rounded-xl">
+                                            className='absolute mt-9 min-w-72 bg-gray-600 rounded-xl'
+                                        >
                                             <li
-                                                className="p-3 cursor-pointer hover:bg-gray-500 rounded-xl"
-                                                onClick={resetFilters}>
+                                                className='p-3 cursor-pointer hover:bg-gray-500 rounded-xl'
+                                                onClick={resetFilters}
+                                            >
                                                 <span>Todos</span>
                                             </li>
                                             <li
-                                                className="p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl"
-                                                onClick={filterByLocked}>
-                                                <FaLock className="text-sky-400" />
-                                                <span className="ml-3">
+                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
+                                                onClick={filterByLocked}
+                                            >
+                                                <FaLock className='text-sky-400' />
+                                                <span className='ml-3'>
                                                     Bloqueados
                                                 </span>
                                             </li>
                                             <li
-                                                className="p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl"
-                                                onClick={filterByUnlocked}>
-                                                <FaUnlock className="text-sky-400" />
-                                                <span className="ml-3">
+                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
+                                                onClick={filterByUnlocked}
+                                            >
+                                                <FaUnlock className='text-sky-400' />
+                                                <span className='ml-3'>
                                                     Desbloqueados
                                                 </span>
                                             </li>
                                             <li
-                                                className="p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl"
-                                                onClick={filterByOnlyGhoul}>
-                                                <FaRadiation className="text-sky-400" />
-                                                <span className="ml-3">
+                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
+                                                onClick={filterByOnlyGhoul}
+                                            >
+                                                <FaRadiation className='text-sky-400' />
+                                                <span className='ml-3'>
                                                     Solo necrófagos
                                                 </span>
                                             </li>
                                             <li
-                                                className="p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl"
-                                                onClick={filterByOnlyHuman}>
-                                                <IoMdPerson className="text-sky-400" />
-                                                <span className="ml-3">
+                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
+                                                onClick={filterByOnlyHuman}
+                                            >
+                                                <IoMdPerson className='text-sky-400' />
+                                                <span className='ml-3'>
                                                     Solo humanos
                                                 </span>
                                             </li>
                                             <li
-                                                className="p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl"
-                                                onClick={filterByRanged}>
-                                                <FaGun className="text-sky-400" />
-                                                <span className="ml-3">
+                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
+                                                onClick={filterByRanged}
+                                            >
+                                                <FaGun className='text-sky-400' />
+                                                <span className='ml-3'>
                                                     Armas a distancia
                                                 </span>
                                             </li>
                                             <li
-                                                className="p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl"
-                                                onClick={filterByMelee}>
-                                                <LuSword className="text-sky-400" />
-                                                <span className="ml-3">
+                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
+                                                onClick={filterByMelee}
+                                            >
+                                                <LuSword className='text-sky-400' />
+                                                <span className='ml-3'>
                                                     Armas cuerpo a cuerpo
                                                 </span>
                                             </li>
                                             <li
-                                                className="p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl"
-                                                onClick={filterByArmor}>
-                                                <GiShoulderArmor className="text-sky-400" />
-                                                <span className="ml-3">
+                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
+                                                onClick={filterByArmor}
+                                            >
+                                                <GiShoulderArmor className='text-sky-400' />
+                                                <span className='ml-3'>
                                                     Armaduras
                                                 </span>
                                             </li>
                                             <li
-                                                className="p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl"
-                                                onClick={filterByPowerArmor}>
-                                                <GiBlackKnightHelm className="text-sky-400" />
-                                                <span className="ml-3">
+                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
+                                                onClick={filterByPowerArmor}
+                                            >
+                                                <GiBlackKnightHelm className='text-sky-400' />
+                                                <span className='ml-3'>
                                                     Servoarmaduras
                                                 </span>
                                             </li>
@@ -232,20 +276,21 @@ function App() {
                         </div>
                     </div>
                     {/* EFFECTS COLUMNS SECTION */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start">
-                        <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
-                            <div className="flex justify-between items-center">
-                                <h2 className="text-center font-bold text-2xl">
+                    <div className='grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start'>
+                        <section className='p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800'>
+                            <div className='flex justify-between items-center'>
+                                <h2 className='text-center font-bold text-2xl'>
                                     Efectos{' '}
-                                    <span className="text-yellow-400">★</span>
+                                    <span className='text-yellow-400'>★</span>
                                 </h2>
                                 <button
-                                    className="text-3xl hover:bg-gray-600 rounded-xl cursor-pointer"
+                                    className='text-3xl hover:bg-gray-600 rounded-xl cursor-pointer'
                                     onClick={() =>
                                         setOneStarEffectsVisible(
                                             !oneStarEffectsVisible,
                                         )
-                                    }>
+                                    }
+                                >
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
@@ -253,14 +298,25 @@ function App() {
                             {oneStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    exit="hidden"
+                                    initial='hidden'
+                                    whileInView='visible'
+                                    exit='hidden'
                                     transition={{ duration: 0.2 }}
-                                    className="mt-5">
-                                    {filteredData
-                                        .filter((e) => e.stars === 1)
-                                        .map((e) => (
+                                    className='mt-5'
+                                >
+                                    {(() => {
+                                        const dataStars1 = filteredData.filter(
+                                            (e) => e.stars === 1,
+                                        );
+                                        if (dataStars1.length === 0) {
+                                            return (
+                                                <li className='text-gray-400'>
+                                                    No hay efectos para el
+                                                    filtro aplicado
+                                                </li>
+                                            );
+                                        }
+                                        return dataStars1.map((e) => (
                                             <LegendaryEffectItem
                                                 key={e.id}
                                                 effect={e}
@@ -268,23 +324,25 @@ function App() {
                                                     toggleUnlockedEffect
                                                 }
                                             />
-                                        ))}
+                                        ));
+                                    })()}
                                 </motion.ul>
                             )}
                         </section>
-                        <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
-                            <div className="flex justify-between items-center">
-                                <h2 className="text-center font-bold text-2xl">
+                        <section className='p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800'>
+                            <div className='flex justify-between items-center'>
+                                <h2 className='text-center font-bold text-2xl'>
                                     Efectos{' '}
-                                    <span className="text-yellow-400">★ ★</span>
+                                    <span className='text-yellow-400'>★ ★</span>
                                 </h2>
                                 <button
-                                    className="text-3xl hover:bg-gray-600 rounded-xl cursor-pointer"
+                                    className='text-3xl hover:bg-gray-600 rounded-xl cursor-pointer'
                                     onClick={() =>
                                         setTwoStarEffectsVisible(
                                             !twoStarEffectsVisible,
                                         )
-                                    }>
+                                    }
+                                >
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
@@ -292,14 +350,25 @@ function App() {
                             {twoStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    exit="hidden"
+                                    initial='hidden'
+                                    whileInView='visible'
+                                    exit='hidden'
                                     transition={{ duration: 0.2 }}
-                                    className="mt-5">
-                                    {filteredData
-                                        .filter((e) => e.stars === 2)
-                                        .map((e) => (
+                                    className='mt-5'
+                                >
+                                    {(() => {
+                                        const dataStars2 = filteredData.filter(
+                                            (e) => e.stars === 2,
+                                        );
+                                        if (dataStars2.length === 0) {
+                                            return (
+                                                <li className='text-gray-400'>
+                                                    No hay efectos para el
+                                                    filtro aplicado
+                                                </li>
+                                            );
+                                        }
+                                        return dataStars2.map((e) => (
                                             <LegendaryEffectItem
                                                 key={e.id}
                                                 effect={e}
@@ -307,25 +376,27 @@ function App() {
                                                     toggleUnlockedEffect
                                                 }
                                             />
-                                        ))}
+                                        ));
+                                    })()}
                                 </motion.ul>
                             )}
                         </section>
-                        <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
-                            <div className="flex justify-between items-center">
-                                <h2 className="text-center font-bold text-2xl">
+                        <section className='p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800'>
+                            <div className='flex justify-between items-center'>
+                                <h2 className='text-center font-bold text-2xl'>
                                     Efectos{' '}
-                                    <span className="text-yellow-400">
+                                    <span className='text-yellow-400'>
                                         ★ ★ ★
                                     </span>
                                 </h2>
                                 <button
-                                    className="text-3xl hover:bg-gray-600 rounded-xl cursor-pointer"
+                                    className='text-3xl hover:bg-gray-600 rounded-xl cursor-pointer'
                                     onClick={() =>
                                         setThreeStarEffectsVisible(
                                             !threeStarEffectsVisible,
                                         )
-                                    }>
+                                    }
+                                >
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
@@ -333,14 +404,25 @@ function App() {
                             {threeStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    exit="hidden"
+                                    initial='hidden'
+                                    whileInView='visible'
+                                    exit='hidden'
                                     transition={{ duration: 0.2 }}
-                                    className="mt-5">
-                                    {filteredData
-                                        .filter((e) => e.stars === 3)
-                                        .map((e) => (
+                                    className='mt-5'
+                                >
+                                    {(() => {
+                                        const dataStars3 = filteredData.filter(
+                                            (e) => e.stars === 3,
+                                        );
+                                        if (dataStars3.length === 0) {
+                                            return (
+                                                <li className='text-gray-400'>
+                                                    No hay efectos para el
+                                                    filtro aplicado
+                                                </li>
+                                            );
+                                        }
+                                        return dataStars3.map((e) => (
                                             <LegendaryEffectItem
                                                 key={e.id}
                                                 effect={e}
@@ -348,25 +430,27 @@ function App() {
                                                     toggleUnlockedEffect
                                                 }
                                             />
-                                        ))}
+                                        ));
+                                    })()}
                                 </motion.ul>
                             )}
                         </section>
-                        <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
-                            <div className="flex justify-between items-center">
-                                <h2 className="text-center text-2xl font-bold">
+                        <section className='p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800'>
+                            <div className='flex justify-between items-center'>
+                                <h2 className='text-center text-2xl font-bold'>
                                     Efectos{' '}
-                                    <span className="text-yellow-400">
+                                    <span className='text-yellow-400'>
                                         ★ ★ ★ ★
                                     </span>
                                 </h2>
                                 <button
-                                    className="text-3xl hover:bg-gray-600 rounded-xl cursor-pointer"
+                                    className='text-3xl hover:bg-gray-600 rounded-xl cursor-pointer'
                                     onClick={() =>
                                         setFourStarEffectsVisible(
                                             !fourStarEffectsVisible,
                                         )
-                                    }>
+                                    }
+                                >
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
@@ -374,14 +458,25 @@ function App() {
                             {fourStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    exit="hidden"
+                                    initial='hidden'
+                                    whileInView='visible'
+                                    exit='hidden'
                                     transition={{ duration: 0.2 }}
-                                    className="mt-5">
-                                    {filteredData
-                                        .filter((e) => e.stars === 4)
-                                        .map((e) => (
+                                    className='mt-5'
+                                >
+                                    {(() => {
+                                        const dataStars4 = filteredData.filter(
+                                            (e) => e.stars === 4,
+                                        );
+                                        if (dataStars4.length === 0) {
+                                            return (
+                                                <li className='text-gray-400'>
+                                                    No hay efectos para el
+                                                    filtro aplicado
+                                                </li>
+                                            );
+                                        }
+                                        return dataStars4.map((e) => (
                                             <LegendaryEffectItem
                                                 key={e.id}
                                                 effect={e}
@@ -389,7 +484,8 @@ function App() {
                                                     toggleUnlockedEffect
                                                 }
                                             />
-                                        ))}
+                                        ));
+                                    })()}
                                 </motion.ul>
                             )}
                         </section>

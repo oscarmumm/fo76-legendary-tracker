@@ -6,7 +6,7 @@ export const Header = () => {
             <h1 className="p-5 text-3xl text-center italic">
                 <div className='flex items-center justify-center text-5xl'>
                     <span className='font-semibold'>Fallout</span>
-                    <span className="mx-2 text-center text-yellow-400">
+                    <span className="ml-2 text-center text-yellow-400">
                         <FaGear />
                     </span>
                     <span className='font-semibold'>76</span>
