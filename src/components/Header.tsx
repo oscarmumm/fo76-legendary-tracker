@@ -12,7 +12,7 @@ export const Header = () => {
                     <span className='font-semibold'>76</span>
                 </div>
                 <span className='text-yellow-400'>★</span>
-                <span className='mx-2'>Seguimiento de Efectos Legendarios</span>
+                <span className='mx-2'>Legendary Tracker</span>
                 <span className='text-yellow-400'>★</span>
             </h1>
         </header>

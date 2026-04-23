@@ -19,11 +19,35 @@ export const Footer = () => {
                 <p className="p-3 bg-gray-800">
                     Creado por <strong>SrGoodneighbor</strong> ™ 2026
                 </p>
-                <div className="p-3 flex text-2xl">
-                    <FaInstagram className="mx-3" />
-                    <FaFacebookSquare className="mx-3" />
-                    <FaTiktok className="mx-3" />
-                    <FaXTwitter className="mx-3" />
+                <div className="p-3 flex text-3xl">
+                    <a
+                        href="https://www.instagram.com/srgoodneighbor/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='cursor-pointer hover:text-sky-400'>
+                        <FaInstagram className="mx-5" />
+                    </a>
+                    <a
+                        href="https://www.facebook.com/srgoodneighbor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='cursor-pointer hover:text-sky-400'>
+                        <FaFacebookSquare className="mx-5" />
+                    </a>
+                    <a
+                        href="https://www.tiktok.com/@srgoodneighbor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='cursor-pointer hover:text-sky-400'>
+                        <FaTiktok className="mx-5" />
+                    </a>
+                    <a
+                        href="https://x.com/SrGoodneighbor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className='cursor-pointer hover:text-sky-400'>
+                        <FaXTwitter className="mx-5" />
+                    </a>
                 </div>
             </footer>
         </div>
