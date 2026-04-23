@@ -43,14 +43,14 @@ export const LegendaryEffectItem = ({
                     </div>
                     <div className="flex">
                         {effect.category.map((cat) => (
-                            <span className="ml-3 text-sky-400">
+                            <span className="ml-1 text-sky-400">
                                 {categoryIcons[cat]}
                             </span>
                         ))}
                     </div>
                 </div>
                 <button
-                    className="p-3 text-xl cursor-pointer rounded-xl hover:scale-125 hover:bg-gray-700"
+                    className="p-3 cursor-pointer rounded-xl hover:scale-125 hover:bg-gray-700"
                     onClick={() => toggleUnlockedEffect(effect.id)}>
                     {effect.unlocked ? (
                         <FaUnlock className="text-green-500" />
