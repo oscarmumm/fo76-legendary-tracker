@@ -7,6 +7,9 @@ import { GiShoulderArmor, GiBlackKnightHelm } from 'react-icons/gi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { BsArrow90DegUp } from 'react-icons/bs';
 
+import { NotificationModal } from './NotificationModal';
+import { useNotification } from '../hooks/useNotification';
+
 type LegendaryEffectItemProps = {
     effect: LegendaryEffect;
     toggleUnlockedEffect: (id: string) => void;

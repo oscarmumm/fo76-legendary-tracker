@@ -17,7 +17,7 @@ export const Footer = () => {
             </button>
             <footer className="mt-5 p-3 flex flex-col items-center justify-center bg-gray-800">
                 <p className="p-3 bg-gray-800">
-                    Creado por <strong>SrGoodneighbor</strong> ™ 2026
+                    Creado por <strong className='font-bold'>SrGoodneighbor</strong> ™ 2026
                 </p>
                 <div className="p-3 flex text-3xl">
                     <a

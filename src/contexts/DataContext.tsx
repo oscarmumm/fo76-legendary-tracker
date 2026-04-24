@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import type { LegendaryEffect } from '../types';
 import { legendaryEffects } from '../db/LegendaryEffectsDB';
@@ -8,10 +8,19 @@ type DataContextType = {
     toggleUnlockedEffect: (id: string) => void;
 };
 
-export const DataContext = createContext<DataContextType | undefined>(undefined);
+export const DataContext = createContext<DataContextType | undefined>(
+    undefined,
+);
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
-    const [effects, setEffects] = useState(legendaryEffects);
+    const [effects, setEffects] = useState<LegendaryEffect []>(() => {
+        const stored = localStorage.getItem('fo76trackerData');
+        return stored ? JSON.parse(stored) : legendaryEffects;
+    });
+
+    useEffect(() => {
+        localStorage.setItem('fo76trackerData', JSON.stringify(effects));
+    }, [effects]);
 
     const toggleUnlockedEffect = (id: string) => {
         const temp = effects.map((el) =>

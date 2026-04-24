@@ -5,6 +5,10 @@ import { AnimatePresence, motion } from 'motion/react';
 import { Header } from './components/Header';
 import { useData } from './contexts/DataContext';
 import { LegendaryEffectItem } from './components/LegendaryEffectItem';
+import { NotificationModal } from './components/NotificationModal';
+
+// HOOKS
+import { useNotification } from './hooks/useNotification';
 
 // ICONS
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -38,6 +42,8 @@ function App() {
 
     const [filterListOpen, setFilterListOpen] = useState(false);
     const [activeFilter, setActiveFilter] = useState('Todos');
+
+    const [notificationModalActive, setNotificationModalActive] = useState<boolean>(false)
 
     const openAllEffectsColumns = () => {
         setOneStarEffectsVisible(true);
@@ -499,6 +505,9 @@ function App() {
                 </main>
             </div>
             <Footer />
+            <AnimatePresence>
+                {notificationModalActive && <NotificationModal effect={''} />}
+            </AnimatePresence>
         </div>
     );
 }
