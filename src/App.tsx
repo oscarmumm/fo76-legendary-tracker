@@ -7,8 +7,7 @@ import { useData } from './contexts/DataContext';
 import { LegendaryEffectItem } from './components/LegendaryEffectItem';
 import { NotificationModal } from './components/NotificationModal';
 
-// HOOKS
-import { useNotification } from './hooks/useNotification';
+
 
 // ICONS
 import { MdKeyboardArrowDown } from 'react-icons/md';
@@ -37,13 +36,11 @@ function App() {
     const [threeStarEffectsVisible, setThreeStarEffectsVisible] =
         useState(false);
     const [fourStarEffectsVisible, setFourStarEffectsVisible] = useState(false);
-    const { effects, toggleUnlockedEffect } = useData();
+    const { effects, toggleUnlockedEffect, notificationActive, notificationMsg } = useData();
     const [filteredData, setFilteredData] = useState(effects);
 
     const [filterListOpen, setFilterListOpen] = useState(false);
     const [activeFilter, setActiveFilter] = useState('Todos');
-
-    const [notificationModalActive, setNotificationModalActive] = useState<boolean>(false)
 
     const openAllEffectsColumns = () => {
         setOneStarEffectsVisible(true);
@@ -506,7 +503,7 @@ function App() {
             </div>
             <Footer />
             <AnimatePresence>
-                {notificationModalActive && <NotificationModal effect={''} />}
+                {notificationActive && <NotificationModal effect={notificationMsg} />}
             </AnimatePresence>
         </div>
     );

@@ -7,12 +7,9 @@ import { GiShoulderArmor, GiBlackKnightHelm } from 'react-icons/gi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { BsArrow90DegUp } from 'react-icons/bs';
 
-import { NotificationModal } from './NotificationModal';
-import { useNotification } from '../hooks/useNotification';
-
 type LegendaryEffectItemProps = {
     effect: LegendaryEffect;
-    toggleUnlockedEffect: (id: string) => void;
+    toggleUnlockedEffect: (id: string, effect: string) => void;
     key: string;
 };
 
@@ -57,7 +54,9 @@ export const LegendaryEffectItem = ({
                 </div>
                 <button
                     className="p-3 cursor-pointer rounded-xl hover:scale-125 hover:bg-gray-700"
-                    onClick={() => toggleUnlockedEffect(effect.id)}>
+                    onClick={() =>
+                        toggleUnlockedEffect(effect.id, effect.name)
+                    }>
                     {effect.unlocked ? (
                         <FaUnlock className="text-green-500" />
                     ) : (
@@ -68,9 +67,9 @@ export const LegendaryEffectItem = ({
             {open && (
                 <p className="p-3 flex text-base italic text-gray-200 bg-gray-700 rounded-xl">
                     <span>
-                        <BsArrow90DegUp className='text-lg' />
+                        <BsArrow90DegUp className="text-lg" />
                     </span>
-                    <span className='pl-1'>{effect.description}</span>
+                    <span className="pl-1">{effect.description}</span>
                 </p>
             )}
         </li>

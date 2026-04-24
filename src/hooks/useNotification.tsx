@@ -4,7 +4,7 @@ export const useNotification = () => {
     const [notificationActive, setNotificationActive] =
         useState<boolean>(false);
     const [notificationMsg, setNotificationMsg] = useState<string>('');
-    const showNotification = (effect: 'string') => {
+    const showNotification = (effect: string) => {
         setNotificationMsg(effect)
         setNotificationActive(true);
         setTimeout(() => setNotificationActive(false), 2000);
