@@ -5,5 +5,6 @@ export type LegendaryEffect = {
     description: string;
     category: ('melee' | 'ranged' | 'armor' | 'power armor')[];
     race: ('human' | 'ghoul')[];
+    bounty: boolean;
     unlocked: boolean;
 }

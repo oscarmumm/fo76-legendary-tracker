@@ -9,6 +9,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+100% daño de ataque sigiloso',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -18,6 +19,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'El daño aumenta hasta un 100% por adicciones',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -27,6 +29,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50% de penetración de armadura',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -37,6 +40,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) Hasta +50% de daño en función de las tapas que tengas. (Armaduras) Refleja el daño en función del número de tapas',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -47,6 +51,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +50% daño a humanos. (Armaduras) -15% de daño procedente de humanos',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -57,6 +62,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Utiliza automáticamente un estimulante si te dan y tienes 25% o menos de salud. Funciona una vez cada 60 segundos',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -67,6 +73,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'El daño aumenta hasta un 50% a medida que disminuye el efecto Resistencia al daño',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -77,6 +84,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Te vuelves invisible mientras te mueves con sigilo o permaneces inmóvil',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -87,6 +95,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +50% de daño a los animales. (Armaduras) -15% de daño de los animales',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -97,6 +106,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +50% de daño a los supermutantes. (Armaduras) -15% de daño de los supermutantes',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -107,6 +117,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +50% de daño a los necrófagos. (Armaduras) -15% de daño de los necrófagos',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -117,6 +128,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +50% de daño a los robots. (Armaduras) -15% de daño de los robots',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -127,6 +139,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Los ataques curarán a los objetivos aliados un 5% de salud',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -136,6 +149,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+300% capacidad de munición',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -145,6 +159,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+1 proyectiles. +75% de daño',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -155,6 +170,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'El daño aumenta hasta un 130% a medida que la salud disminuye',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -165,6 +181,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +50% de daño a los mirelurks e insectos. (Armaduras) -15% de daño de los mirelurks e insectos',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -175,6 +192,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +50% de daño a los calcinados. (Armaduras) -15% de daño de los calcinados',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -184,6 +202,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+100% de daño a objetivos lejanos',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -194,6 +213,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+5% de daño por acumulación de embestidas y +9 de acumulaciones máximas',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -204,6 +224,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Una vez cada 30 segundos, recibir un golpe cuerpo a cuerpo produce invisibilidad',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -214,6 +235,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Obtén un máximo de +3 a todas las estadísticas SPECIAL (salvo RES) cuando tengas poca salud',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -224,6 +246,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'La salud máxima aumenta hasta +40 a medida que se llenan los medidores de hambre y sed',
         category: ['armor', 'power armor'],
         race: ['human'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -234,6 +257,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) El daño aumenta hasta un 40% a medida que se llena el medidor de salvajismo. (Armaduras) La reducción del daño aumenta hasta un 6% a medida que se llena el medidor de salvajismo',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -244,6 +268,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'El daño aumenta hasta un 100% a medida que la salud aumenta',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -254,6 +279,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) El daño aumenta hasta 50% a medida que sufres mutaciones. (Armaduras) Hasta un 5% de reducción de daño a medida que sufres mutaciones',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -264,6 +290,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +50% de daño al permanecer oculto. (Armaduras) +4 de PER y agilidad al permanecer oculto',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -273,6 +300,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'Hasta un 10% de reducción de daño cuanto mas peso lleves',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -283,6 +311,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+50% de daño contra objetivos con la salud por encima del 60%',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -293,6 +322,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Hasta un 10% de reducción de daño cuanto menos porcentaje de salud tengas',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -302,6 +332,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+0.5% velocidad de curación',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -311,6 +342,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'Las bajas aceleran la transformación en salvaje',
         category: ['melee'],
         race: ['ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -321,6 +353,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Te reanimas automáticamente con un estimulante. El tiempo de recarga es de 5 minutos, pero cada módulo salvavidas adicional lo reduce en 60 segundos',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -331,6 +364,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'El daño aumenta hasta un 40% a medida que se llenan los medidores de hambre y sed',
         category: ['ranged', 'melee'],
         race: ['human'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -341,6 +375,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'El daño que inflinje el objetivo al que atacas se reduce un 25% durante 5 segundos',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -351,6 +386,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) +10% de daño por baja en una racha de bajas. (Armaduras) +10 de resistencia al daño y a la energía por baja en una racha de bajas (máximo 10)',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -361,6 +397,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Regenera un 2% de salud durante 2 segundos al golpear a un objetivo',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -371,6 +408,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Hasta un 6% de reducción de daño a medida que aumenta la salud (el % máximo depende de tus puntos máximos de salud)',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -381,6 +419,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+50% de daño cuando el enemigo tiene menos del 40% de la salud',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
 
@@ -393,6 +432,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Consigue puntos de acción durante una racha de bajas. El efecto se vuelve mas potente cuanto mas larga sea la racha',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -402,6 +442,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+2 Agilidad',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -412,6 +453,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Consigue salud a los largo del tiempo durante las rachas de bajas. El efecto se vuelve mas potente cuanto mas larga sea la racha',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -420,7 +462,8 @@ export const legendaryEffects: LegendaryEffect[] = [
         name: 'Antiséptico',
         description: '+25% resistencia a enfermedades medioambientales',
         category: ['armor', 'power armor'],
-        race: ['human', 'ghoul'],
+        race: ['human'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -430,6 +473,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+25% de daño al puntar',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -439,6 +483,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+2 Carisma',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -449,6 +494,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Las bajas tienen un 50% de probabilidad de otorgar una pequeña cantidad de tapas',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -458,6 +504,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'Aumenta en +25 todas las resistencias',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -467,6 +514,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50 resistencia al veneno',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -476,6 +524,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+25% de daño cuerpo a cuerpo al mantenerte inmóvil',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -486,6 +535,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Los proyectiles explotan e inflingen un daño de arma del 20%',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -496,6 +546,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Refuerza el aguante de las extremidades según la racha de bajas',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -505,6 +556,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+2 Fuerza',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -514,6 +566,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'El hambre y la sed aumentan un 10% mas despacio',
         category: ['armor', 'power armor'],
         race: ['human'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -523,6 +576,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50% daño por golpe',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -532,6 +586,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50 resistencia al fuego',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -541,6 +596,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50% daño a las extremidades',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -550,6 +606,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'Recuperas 15 puntos de acción con cada baja',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -559,6 +616,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+2 Inteligencia',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -568,6 +626,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50 resistencia a la radiación',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -577,6 +636,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+2 Percepción',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -586,6 +646,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+40% daño de ataque potente',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -595,6 +656,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+5% regeneración de puntos de acción',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -604,6 +666,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+2 Resistencia',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -613,6 +676,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50% reflejo del daño bloqueado',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -622,6 +686,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'Recibe un 7% menos de daño por explosión',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -631,6 +696,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+2 Suerte',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -640,6 +706,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50 resistencia criogénica',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -649,6 +716,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50% probabilidad de golpear un objetivo en VATS',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -658,6 +726,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+25% velocidad del arma',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -667,6 +736,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50% daño crítico',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -677,6 +747,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'La última bala de un cargador tiene una probabilidad del 25% de infringir un +100% de daño',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     // ⭐⭐⭐ 3 STARS
@@ -687,6 +758,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '-50% de daño por caída',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -697,6 +769,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Haces 25% menos ruido al moverte con sigilo. Se reduce la probabilidad de detección un 25%',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -706,6 +779,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+3 Agilidad',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -716,6 +790,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'El peso de la comida, la bebida y las drogas se reducen un 20%',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -725,6 +800,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+15% daño bloqueado',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -734,6 +810,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'Aumentan +20 los puntos de acción máximos',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -743,6 +820,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'Respirar bajo el agua',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -752,6 +830,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+ Fue por baja en una racha de bajas (10 como máximo)',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -761,6 +840,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '10% de reducción de daño al correr',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -770,6 +850,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+3 Carisma',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -779,6 +860,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '5% de reducción de daño al permanecer inmóvil',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -789,6 +871,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas cuerpo a cuerpo) +40% probabilidad de bloquear automaticamente los ataques. (Armadura) +5% probabilidad de bloquear automaticamente los ataques',
         category: ['melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -799,6 +882,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+1 habilidad de hackeo. +1 habilidad de forzar cerraduras',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -808,6 +892,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+0.25 recuperación del daño de radiación',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -818,6 +903,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '(Armas) Las armas tardan un 50% mas en romperse. (Armaduras) Las armaduras tardan un 50% mas en romperse',
         category: ['ranged', 'melee', 'armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -828,6 +914,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '5% de probabilidad de inflingir 18 de daño de energía por segundo durante 3 segundos a los atacantes cuerpo a cuerpo',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -838,6 +925,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '5% de probabilidad de inflingir 19 de daño por fuego por segundo durante 3 segundos a los atacantes cuerpo a cuerpo',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -848,6 +936,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '10% de probabilidad de producir invisibilidad en el jugador durante 2 segundos al golpear a un objetivo',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -857,6 +946,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+15% resistencia al daño a las extremidades',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -866,6 +956,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+3 Fuerza',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -875,6 +966,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+15% carga crítica de VATS adicional',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -885,6 +977,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '5% de probabilidad de inflingir 12 de daño por hielo por segundo durante 4 segundos a los atacantes cuerpo a cuerpo',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -894,6 +987,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+50 de resistencia al daño al apuntar',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -903,6 +997,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+3 Inteligencia',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -912,6 +1007,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+15% velocidad de recarga',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -921,6 +1017,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'El peso de la munición se reduce un 20%',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -930,6 +1027,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+5% de eficacia de estimulantes, rad-away y rad-x',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -939,6 +1037,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+3 Percepción',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -948,6 +1047,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '-90% de peso',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -957,6 +1057,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'El peso de las armas se reduce un 20%',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -966,6 +1067,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'El peso de los objetos de chatarra se reduce un 20%',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -975,6 +1077,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+2% probabilidad de esquivar',
         category: ['armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -984,6 +1087,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+3 Resistencia',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -993,6 +1097,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+500 a todas las resistencias al recargar',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1001,7 +1106,8 @@ export const legendaryEffects: LegendaryEffect[] = [
         name: 'Resplandeciente',
         description: 'Las bajas suman una pequeña cantidad de resplandor',
         category: ['ranged', 'melee'],
-        race: ['human', 'ghoul'],
+        race: ['ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -1011,6 +1117,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: 'Aumenta los PS max en 20',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -1020,6 +1127,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+3 Suerte',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1030,6 +1138,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '5% de probabilidad de inflingir 12 de daño por veneno por segundo durante 7 segundos a los atacantes cuerpo a cuerpo',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1039,6 +1148,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '-35% de costo de PA',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1048,6 +1158,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+100% de aumento de velocidad al apuntar',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     // ⭐⭐⭐⭐ 4 STARS
@@ -1059,6 +1170,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+12,5 de daño cuerpo a cuerpo y un +12,5% adicional para cada compañero de equipo cercano (hasta un +50% cuando esté todo el equipo)',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1069,6 +1181,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Aumento de la velocidad de recarga y el ataque cuerpo a cuerpo según la racha de bajas',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1079,6 +1192,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+25% de daño por cada extremidad incapacitada del objetivo',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1089,6 +1203,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Los ataques ligeros aumentan la carga que se libera con un ataque pesado (3 cargas como máximo)',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1099,6 +1214,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '15% de probabilidad de recargar al instante traas golpear a un enemigo (hasta un 75% de probabilidad con todas las partes)',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1109,6 +1225,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+1 de rango de Tren del dolor. Los enemigos golpeados con tren del dolor sufren hemorragia y 20 de daño durante 5 segundos',
         category: ['power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1119,6 +1236,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Los impactos críticos restauran 10 de salud y puntops de acción al instante, y 100 mas durante 5 segundos al jugador y al equipo en un radio de 100 metros',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1129,6 +1247,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Reduce el costo de los puntos de acción un 20% al correr (hasta un -100% con todas las partes)',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1139,6 +1258,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Al recargar emite una onda expansiva que aturde a los enemigos cercanos durante 3 segundos',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1149,6 +1269,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Reduce el costo de puntos de acción un 5% al atacar con VATS (hasta un -25% con todas las partes)',
         category: ['power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1159,6 +1280,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Mejora el cono de fuego, el retroceso y la estabilidad de las armas un 40%',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1168,6 +1290,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+20 de daño por hielo',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1178,6 +1301,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'La servoarmadura del usuario y todos los compañeros de equipo en un radio de 50 metros se rompe un 5% mas lento (hasta un 25% mas lento con todas las partes)',
         category: ['power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1188,6 +1312,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+2 de regeneración de puntos de acción a cambio de radiación (hasta +10 de puntos de acción con todas las partes)',
         category: ['power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1198,6 +1323,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+10% de daño por cada enemigo a tu alrededor, hasta un máximo de +50%',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1207,6 +1333,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+20% de daño a los puntos débiles',
         category: ['ranged'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1217,6 +1344,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+10% de daño por acumulación de embestidas y +10 de acumulaciones máximas',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1227,6 +1355,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'La salud se regenera lentamente (1 de salud por segundo, hasta +5 de salud por segundo con todas las partes)',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1237,6 +1366,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Las armas cuerpo a cuerpo inflingen un 5% de daño adicional (hasta un +25% con todas las partes)',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1246,6 +1376,7 @@ export const legendaryEffects: LegendaryEffect[] = [
         description: '+10 de daño por veneno por segundo a objetivos cercanos',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1256,6 +1387,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Inflinge un 50% de daño adicional cuando el enemigo está en llamas',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1266,6 +1398,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'La velocidad y la carrera aumentan un 5% (hasta un +25% con todas las partes)',
         category: ['power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1276,6 +1409,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'El arma infringirá mas daño (hasta un +60%) cuanto mejor sea el estado del objeto equipado (+100%)',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1286,6 +1420,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '+200 de resistencia al daño durante 10 segundos al peermancer quieto (20 segundos de tiempo de recarga. Hasta +1000 con todas las partes)',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1296,6 +1431,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Las armas a distancia inflingen un 5%  de daño adicionas (hasta un +25% con todas las partes)',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1306,6 +1442,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Devuelve un 10% del daño recibido hacia el atacante. (hasta un 50% con todas las partes)',
         category: ['power armor'],
         race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
     {
@@ -1316,6 +1453,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Obtienes salud y regeneración de puntos de acción a medida que se llenan los medidores de hambre y sed',
         category: ['power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1326,6 +1464,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             '50% de probabilidad de no usar puntos de acción (10% de probabilidad en herramientas eléctricas) al inflingir daño',
         category: ['melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1336,6 +1475,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Las extremidades incapacitadas explotan e inflingen hasta un 50 de daño por explosión a los enemigos cercanos',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1346,6 +1486,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Cada pieza de la armadura reduce los costos del impacto crítico un 10%. (hasta un -50% con todas las partes)',
         category: ['armor', 'power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1356,6 +1497,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Inflinge un 50% de daño adicional cuando el enemigo es envenenado',
         category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
     {
@@ -1366,6 +1508,7 @@ export const legendaryEffects: LegendaryEffect[] = [
             'Refuerza en +50 la resistencia al daño físico y a ala energía y en +20 la resistencia al veneno, hielo y fuego al portador y los compañeros de equipo en un radio de 50 metros',
         category: ['power armor'],
         race: ['human', 'ghoul'],
+        bounty: false,
         unlocked: false,
     },
 ];
