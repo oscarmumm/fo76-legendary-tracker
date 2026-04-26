@@ -1,6 +1,6 @@
 // Variables de configuración
 const CACHE_NAME = 'fo76-cache-v1';
-const URLS_TO_CACHE = ['/', '/manifest.json', '/favicon.svg'];
+const URLS_TO_CACHE = ['/', '/manifest.json', '/favicon.ico'];
 
 // Instalando el service worker
 self.addEventListener('install', (event) => {
