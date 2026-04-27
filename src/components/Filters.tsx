@@ -1,24 +1,35 @@
-import { useState } from "react";
+import { useState } from 'react';
+
+// ICONS
+import { FaUnlock, FaLock, FaRadiation } from 'react-icons/fa';
+import { IoMdPerson } from 'react-icons/io';
+import { FaGun } from 'react-icons/fa6';
+import { LuSword } from 'react-icons/lu';
+import { GiBlackKnightHelm, GiShoulderArmor } from 'react-icons/gi';
+import { GiWantedReward } from 'react-icons/gi';
+import { FaBook } from 'react-icons/fa';
 
 interface FilterProps {
     onFilterChange: (filter: string) => void;
 }
 
-export const Filters = ({onFilterChange} : FilterProps) => {
-    const [activeFilter, setActiveFilter] = useState<string>('all')
-    
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement, HTMLSelectElement>) => {
+export const Filters = ({ onFilterChange }: FilterProps) => {
+    const [activeFilter, setActiveFilter] = useState<string>('all');
+
+    const handleChange = (
+        e: React.ChangeEvent<HTMLSelectElement, HTMLSelectElement>,
+    ) => {
         const value = e.target.value;
         setActiveFilter(value);
-        onFilterChange(value)
-    }
+        onFilterChange(value);
+    };
     return (
         <div>
-            <label className="text-lg font-semibold">Filtros:</label>
+            <label className="mx-3 text-lg font-semibold">Filtros:</label>
             <select
                 value={activeFilter}
                 onChange={handleChange}
-                className="p-3 min-w-72 bg-gray-700 hover:bg-gray-600 rounded-xl cursor-pointer text-slate-50 border-none">
+                className="p-3 min-w-72 bg-gray-700 hover:bg-gray-600 rounded-xl cursor-pointer text-slate-50 border-none outline-none">
                 <option value="all">Todos los efectos</option>
                 <option value="locked">Bloqueados</option>
                 <option value="unlocked">Desbloqueados</option>

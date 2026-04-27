@@ -7,17 +7,11 @@ import { useData } from './contexts/DataContext';
 import { LegendaryEffectItem } from './components/LegendaryEffectItem';
 import { NotificationModal } from './components/NotificationModal';
 import { Footer } from './components/Footer';
+import { CharacterSelector } from './components/CharacterSelector';
+import { Filters } from './components/Filters';
 
 // ICONS
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { FaUnlock, FaLock, FaRadiation } from 'react-icons/fa';
-import { IoMdPerson } from 'react-icons/io';
-import { FaGun } from 'react-icons/fa6';
-import { LuSword } from 'react-icons/lu';
-import { GiBlackKnightHelm, GiShoulderArmor } from 'react-icons/gi';
-import { GiWantedReward } from 'react-icons/gi';
-import { FaBook } from 'react-icons/fa';
-import { CharacterSelector } from './components/CharacterSelector';
 
 const filterListAnimation = {
     visible: {
@@ -39,101 +33,21 @@ function App() {
     const {
         characters,
         activeCharacterId,
-        switchCharacter,
         toggleUnlockedEffect,
         notificationActive,
         notificationMsg,
     } = useData();
-    
-    const effects = characters.find(c => c.id === activeCharacterId)?.effects || [];
-    const [filteredData, setFilteredData] = useState(effects);
 
-    const [filterListOpen, setFilterListOpen] = useState(false);
-    const [activeFilter, setActiveFilter] = useState('Todos');
+    const effects =
+        characters.find((c) => c.id === activeCharacterId)?.effects || [];
+    const [filteredData, setFilteredData] = useState(effects);
+    const [filter, setFilter] = useState<string>('all');
 
     const openAllEffectsColumns = () => {
         setOneStarEffectsVisible(true);
         setTwoStarEffectsVisible(true);
         setThreeStarEffectsVisible(true);
         setFourStarEffectsVisible(true);
-    };
-
-    const resetFilters = () => {
-        setFilteredData(effects);
-        setActiveFilter('Todos');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-
-    const filterByLocked = () => {
-        const temp = effects.filter((e) => !e.unlocked);
-        setFilteredData(temp);
-        setActiveFilter('Bloqueados');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-    const filterByUnlocked = () => {
-        const temp = effects.filter((e) => e.unlocked);
-        setFilteredData(temp);
-        setActiveFilter('Desbloqueados');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-
-    const filterByRanged = () => {
-        const temp = effects.filter((e) => e.category.includes('ranged'));
-        setFilteredData(temp);
-        setActiveFilter('Armas a distancia');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-
-    const filterByMelee = () => {
-        const temp = effects.filter((e) => e.category.includes('melee'));
-        setFilteredData(temp);
-        setActiveFilter('Armas cuerpo a cuerpo');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-
-    const filterByArmor = () => {
-        const temp = effects.filter((e) => e.category.includes('armor'));
-        setFilteredData(temp);
-        setActiveFilter('Armaduras');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-
-    const filterByPowerArmor = () => {
-        const temp = effects.filter((e) => e.category.includes('power armor'));
-        setFilteredData(temp);
-        setActiveFilter('Servoarmaduras');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-
-    const filterByOnlyHuman = () => {
-        const temp = effects.filter((e) => !e.race.includes('ghoul'));
-        setFilteredData(temp);
-        setActiveFilter('Solo humanos');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-
-    const filterByOnlyGhoul = () => {
-        const temp = effects.filter((e) => !e.race.includes('human'));
-        setFilteredData(temp);
-        setActiveFilter('Solo necrófagos');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
-    };
-
-    const filterByOnlyBounty = () => {
-        const temp = effects.filter((e) => e.bounty === true);
-        setFilteredData(temp);
-        setActiveFilter('Solo Caza de matones y Cazarrecompensas');
-        setFilterListOpen(false);
-        openAllEffectsColumns();
     };
 
     const unlockedCount = useMemo(
@@ -167,195 +81,74 @@ function App() {
     );
 
     useEffect(() => {
-        switch (activeFilter) {
-            case 'Todos':
-                resetFilters();
+        let temp = effects;
+        switch (filter) {
+            case 'locked':
+                temp = effects.filter((e) => !e.unlocked);
                 break;
-            case 'Bloqueados':
-                filterByLocked();
+            case 'unlocked':
+                temp = effects.filter((e) => e.unlocked);
                 break;
-            case 'Desbloqueados':
-                filterByUnlocked();
+            case 'human':
+                temp = effects.filter((e) => !e.race.includes('ghoul'));
                 break;
-            case 'Solo humanos':
-                filterByOnlyHuman();
+            case 'ghoul':
+                temp = effects.filter((e) => !e.race.includes('human'));
                 break;
-            case 'Solo necrófagos':
-                filterByOnlyGhoul();
+            case 'ranged':
+                temp = effects.filter((e) => e.category.includes('ranged'));
                 break;
-            case 'Armas a distancia':
-                filterByRanged();
+            case 'melee':
+                temp = effects.filter((e) => e.category.includes('melee'));
                 break;
-            case 'Armas cuerpo a cuerpo':
-                filterByMelee();
+            case 'armor':
+                temp = effects.filter((e) => e.category.includes('armor'));
                 break;
-            case 'Armaduras':
-                filterByArmor();
+            case 'powerArmor':
+                temp = effects.filter((e) =>
+                    e.category.includes('power armor'),
+                );
                 break;
-            case 'Servoarmaduras':
-                filterByPowerArmor();
-                break;
-            case 'Solo Caza de matones y Cazarrecompensas':
-                filterByOnlyBounty();
+            case 'bounty':
+                temp = effects.filter((e) => e.bounty === true);
                 break;
             default:
                 setFilteredData(effects);
         }
-    }, [activeFilter, effects]);
+        setFilteredData(temp);
+        openAllEffectsColumns();
+    }, [filter, effects]);
 
     return (
-        <div className='bg-gray-900 text-slate-50 min-h-screen flex flex-col justify-between'>
+        <div className="bg-gray-900 text-slate-50 min-h-screen flex flex-col justify-between">
             <div>
                 <Header />
-                <main className='bg-gray-900 text-slate-50 flex flex-col'>
-                    {/* SELECTOR DE PERSONAJES */}
-                    <CharacterSelector />
-                    
-                    <div className='flex items-center justify-center'>
-                        <div className='p-5 m-3 max-w-2xl flex flex-col gap-5 md:items-center md:justify-center md:flex-row shadow-md rounded-xl bg-gray-800'>
-                            {/* FILTERS */}
-                            <div className='flex flex-col'>
-                                <h2 className='p-1 text-lg'>Filtros</h2>
-                                <button
-                                    className='p-3 min-w-72 relative flex justify-between bg-gray-700 hover:bg-gray-600 rounded-xl cursor-pointer'
-                                    onClick={() =>
-                                        setFilterListOpen(!filterListOpen)
-                                    }
-                                >
-                                    <span className='text-lg'>
-                                        {activeFilter}
-                                    </span>
-                                    <MdKeyboardArrowDown className='text-3xl' />
-                                </button>
-                                <AnimatePresence>
-                                    {filterListOpen && (
-                                        <motion.ul
-                                            variants={filterListAnimation}
-                                            initial='hidden'
-                                            whileInView='visible'
-                                            exit='hidden'
-                                            transition={{ duration: 0.2 }}
-                                            className='absolute mt-9 w-72 bg-gray-600 rounded-xl'
-                                        >
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={resetFilters}
-                                            >
-                                                <FaBook className='text-sky-400 text-2xl' />
-                                                <span className='ml-3 '>
-                                                    Todos los efectos
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByLocked}
-                                            >
-                                                <FaLock className='text-sky-400 text-2xl' />
-                                                <span className='ml-3'>
-                                                    Bloqueados
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByUnlocked}
-                                            >
-                                                <FaUnlock className='text-sky-400 text-2xl' />
-                                                <span className='ml-3'>
-                                                    Desbloqueados
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByRanged}
-                                            >
-                                                <FaGun className='text-sky-400 text-2xl' />
-                                                <span className='ml-3'>
-                                                    Armas a distancia
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByMelee}
-                                            >
-                                                <LuSword className='text-sky-400 text-2xl' />
-                                                <span className='ml-3'>
-                                                    Armas cuerpo a cuerpo
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByArmor}
-                                            >
-                                                <GiShoulderArmor className='text-sky-400 text-2xl' />
-                                                <span className='ml-3'>
-                                                    Armaduras
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByPowerArmor}
-                                            >
-                                                <GiBlackKnightHelm className='text-sky-400 text-2xl' />
-                                                <span className='ml-3'>
-                                                    Servoarmaduras
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByOnlyGhoul}
-                                            >
-                                                <FaRadiation className='text-sky-400 text-2xl' />
-                                                <span className='ml-3'>
-                                                    Solo necrófagos
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByOnlyHuman}
-                                            >
-                                                <IoMdPerson className='text-sky-400 text-2xl' />
-                                                <span className='ml-3'>
-                                                    Solo humanos
-                                                </span>
-                                            </li>
-                                            <li
-                                                className='p-3 cursor-pointer flex items-center hover:bg-gray-500 rounded-xl'
-                                                onClick={filterByOnlyBounty}
-                                            >
-                                                <GiWantedReward className='text-sky-400 text-3xl' />
-                                                <span className='ml-3'>
-                                                    Solo Caza de matones y
-                                                    Cazarrecompensas
-                                                </span>
-                                            </li>
-                                        </motion.ul>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        </div>
+                <main className="bg-gray-900 text-slate-50 flex flex-col">
+                    <div className='p-3 m-3 flex flex-col items-center justify-center md:flex-row bg-gray-800 rounded-xl gap-3'>
+                        <CharacterSelector />
+                        <Filters onFilterChange={(f) => setFilter(f)} />
                     </div>
                     {/* EFFECTS COLUMNS SECTION */}
-                    <div className='grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 items-start'>
-                        <section className='p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800'>
-                            <div className='flex justify-between items-center'>
-                                <h2 className='text-center font-bold text-2xl'>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 items-start">
+                        <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-center font-bold">
                                     Efectos{' '}
-                                    <span className='text-yellow-400 ml-3'>
+                                    <span className="text-yellow-400 ml-3">
                                         ★
                                     </span>
-                                    <span className='text-gray-400 ml-3'>
+                                    <span className="text-gray-400 ml-3">
                                         {unlockedCount[1].unlocked}/
                                         {unlockedCount[1].total}
                                     </span>
                                 </h2>
                                 <button
-                                    className='text-3xl hover:bg-gray-600 rounded-xl cursor-pointer'
+                                    className="text-3xl hover:bg-gray-600 rounded-xl cursor-pointer"
                                     onClick={() =>
                                         setOneStarEffectsVisible(
                                             !oneStarEffectsVisible,
                                         )
-                                    }
-                                >
+                                    }>
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
@@ -363,19 +156,18 @@ function App() {
                             {oneStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
-                                    initial='hidden'
-                                    whileInView='visible'
-                                    exit='hidden'
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    exit="hidden"
                                     transition={{ duration: 0.2 }}
-                                    className='mt-5'
-                                >
+                                    className="mt-5">
                                     {(() => {
                                         const dataStars1 = filteredData.filter(
                                             (e) => e.stars === 1,
                                         );
                                         if (dataStars1.length === 0) {
                                             return (
-                                                <li className='text-gray-400'>
+                                                <li className="text-gray-400">
                                                     No hay efectos para el
                                                     filtro aplicado
                                                 </li>
@@ -394,26 +186,25 @@ function App() {
                                 </motion.ul>
                             )}
                         </section>
-                        <section className='p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800'>
-                            <div className='flex justify-between items-center'>
-                                <h2 className='text-center font-bold text-2xl'>
+                        <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-center font-bold">
                                     Efectos{' '}
-                                    <span className='text-yellow-400 ml-3'>
+                                    <span className="text-yellow-400 ml-3">
                                         ★ ★
                                     </span>
-                                    <span className='text-gray-400 ml-3'>
+                                    <span className="text-gray-400 ml-3">
                                         {unlockedCount[2].unlocked}/
                                         {unlockedCount[2].total}
                                     </span>
                                 </h2>
                                 <button
-                                    className='text-3xl hover:bg-gray-600 rounded-xl cursor-pointer'
+                                    className="text-3xl hover:bg-gray-600 rounded-xl cursor-pointer"
                                     onClick={() =>
                                         setTwoStarEffectsVisible(
                                             !twoStarEffectsVisible,
                                         )
-                                    }
-                                >
+                                    }>
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
@@ -421,19 +212,18 @@ function App() {
                             {twoStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
-                                    initial='hidden'
-                                    whileInView='visible'
-                                    exit='hidden'
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    exit="hidden"
                                     transition={{ duration: 0.2 }}
-                                    className='mt-5'
-                                >
+                                    className="mt-5">
                                     {(() => {
                                         const dataStars2 = filteredData.filter(
                                             (e) => e.stars === 2,
                                         );
                                         if (dataStars2.length === 0) {
                                             return (
-                                                <li className='text-gray-400'>
+                                                <li className="text-gray-400">
                                                     No hay efectos para el
                                                     filtro aplicado
                                                 </li>
@@ -452,26 +242,25 @@ function App() {
                                 </motion.ul>
                             )}
                         </section>
-                        <section className='p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800'>
-                            <div className='flex justify-between items-center'>
-                                <h2 className='text-center font-bold text-2xl'>
+                        <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-center font-bold">
                                     Efectos{' '}
-                                    <span className='text-yellow-400 ml-3'>
+                                    <span className="text-yellow-400 ml-3">
                                         ★ ★ ★
                                     </span>
-                                    <span className='text-gray-400 ml-3'>
+                                    <span className="text-gray-400 ml-3">
                                         {unlockedCount[3].unlocked}/
                                         {unlockedCount[3].total}
                                     </span>
                                 </h2>
                                 <button
-                                    className='text-3xl hover:bg-gray-600 rounded-xl cursor-pointer'
+                                    className="text-3xl hover:bg-gray-600 rounded-xl cursor-pointer"
                                     onClick={() =>
                                         setThreeStarEffectsVisible(
                                             !threeStarEffectsVisible,
                                         )
-                                    }
-                                >
+                                    }>
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
@@ -479,19 +268,18 @@ function App() {
                             {threeStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
-                                    initial='hidden'
-                                    whileInView='visible'
-                                    exit='hidden'
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    exit="hidden"
                                     transition={{ duration: 0.2 }}
-                                    className='mt-5'
-                                >
+                                    className="mt-5">
                                     {(() => {
                                         const dataStars3 = filteredData.filter(
                                             (e) => e.stars === 3,
                                         );
                                         if (dataStars3.length === 0) {
                                             return (
-                                                <li className='text-gray-400'>
+                                                <li className="text-gray-400">
                                                     No hay efectos para el
                                                     filtro aplicado
                                                 </li>
@@ -510,26 +298,25 @@ function App() {
                                 </motion.ul>
                             )}
                         </section>
-                        <section className='p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800'>
-                            <div className='flex justify-between items-center'>
-                                <h2 className='text-center text-2xl font-bold'>
+                        <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
+                            <div className="flex justify-between items-center">
+                                <h2 className="text-center font-bold">
                                     Efectos{' '}
-                                    <span className='text-yellow-400 ml-3'>
+                                    <span className="text-yellow-400 ml-3">
                                         ★ ★ ★ ★
                                     </span>
-                                    <span className='text-gray-400 ml-3'>
+                                    <span className="text-gray-400 ml-3">
                                         {unlockedCount[4].unlocked}/
                                         {unlockedCount[4].total}
                                     </span>
                                 </h2>
                                 <button
-                                    className='text-3xl hover:bg-gray-600 rounded-xl cursor-pointer'
+                                    className="text-3xl hover:bg-gray-600 rounded-xl cursor-pointer"
                                     onClick={() =>
                                         setFourStarEffectsVisible(
                                             !fourStarEffectsVisible,
                                         )
-                                    }
-                                >
+                                    }>
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
@@ -537,19 +324,18 @@ function App() {
                             {fourStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
-                                    initial='hidden'
-                                    whileInView='visible'
-                                    exit='hidden'
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    exit="hidden"
                                     transition={{ duration: 0.2 }}
-                                    className='mt-5'
-                                >
+                                    className="mt-5">
                                     {(() => {
                                         const dataStars4 = filteredData.filter(
                                             (e) => e.stars === 4,
                                         );
                                         if (dataStars4.length === 0) {
                                             return (
-                                                <li className='text-gray-400'>
+                                                <li className="text-gray-400">
                                                     No hay efectos para el
                                                     filtro aplicado
                                                 </li>
