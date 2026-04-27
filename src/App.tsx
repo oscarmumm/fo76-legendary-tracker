@@ -17,6 +17,7 @@ import { LuSword } from 'react-icons/lu';
 import { GiBlackKnightHelm, GiShoulderArmor } from 'react-icons/gi';
 import { GiWantedReward } from 'react-icons/gi';
 import { FaBook } from 'react-icons/fa';
+import { CharacterSelector } from './components/CharacterSelector';
 
 const filterListAnimation = {
     visible: {
@@ -36,11 +37,15 @@ function App() {
         useState(false);
     const [fourStarEffectsVisible, setFourStarEffectsVisible] = useState(false);
     const {
-        effects,
+        characters,
+        activeCharacterId,
+        switchCharacter,
         toggleUnlockedEffect,
         notificationActive,
         notificationMsg,
     } = useData();
+    
+    const effects = characters.find(c => c.id === activeCharacterId)?.effects || [];
     const [filteredData, setFilteredData] = useState(effects);
 
     const [filterListOpen, setFilterListOpen] = useState(false);
@@ -203,6 +208,9 @@ function App() {
             <div>
                 <Header />
                 <main className='bg-gray-900 text-slate-50 flex flex-col'>
+                    {/* SELECTOR DE PERSONAJES */}
+                    <CharacterSelector />
+                    
                     <div className='flex items-center justify-center'>
                         <div className='p-5 m-3 max-w-2xl flex flex-col gap-5 md:items-center md:justify-center md:flex-row shadow-md rounded-xl bg-gray-800'>
                             {/* FILTERS */}

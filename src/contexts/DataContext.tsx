@@ -1,11 +1,13 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { LegendaryEffect } from '../types';
+import type { LegendaryEffect, Character } from '../types';
 import { legendaryEffects } from '../db/LegendaryEffectsDB';
 import { useNotification} from '../hooks/useNotification';
 
 type DataContextType = {
-    effects: LegendaryEffect[];
+    characters: Character[];
+    activeCharacterId: string;
+    switchCharacter: (id: string) => void;
     toggleUnlockedEffect: (id: string, effect: string) => void;
     notificationActive: boolean;
     notificationMsg: string;
@@ -16,38 +18,51 @@ export const DataContext = createContext<DataContextType | undefined>(
 );
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
-    const [effects, setEffects] = useState<LegendaryEffect[]>(() => {
+    // Declarar la función ANTES de usarla
+    const initializeCharacters = (): Character[] => {
         const stored = localStorage.getItem('fo76trackerData');
-        return stored ? JSON.parse(stored) : legendaryEffects;
-    });
-    const {notificationActive, notificationMsg, showNotification} = useNotification()
-
-    useEffect(() => {
-        localStorage.setItem('fo76trackerData', JSON.stringify(effects));
-    }, [effects]);
-
-    const sentNotification = (effect: string) => {
-        showNotification(effect)
+        if (stored) {
+            return JSON.parse(stored);
+        }
+        // Crear 5 personajes vacíos
+        return Array.from({ length: 5 }, (_, i) => ({
+            id: `character-${i + 1}`,
+            name: `Personaje ${i + 1}`,
+            effects: legendaryEffects,
+        }));
     };
 
+    const [characters, setCharacters] = useState<Character[]>(initializeCharacters);
+    const [activeCharacterId, setActiveCharacterId] = useState<string>('character-1');
+    const {notificationActive, notificationMsg, showNotification} = useNotification();
+
+    useEffect(() => {
+        localStorage.setItem('fo76trackerData', JSON.stringify(characters));
+    }, [characters]);
 
     const toggleUnlockedEffect = (id: string, effect: string) => {
-        const selectedEffect = effects.find((el) => el.id === id);
-
-        const temp = effects.map((el) =>
-            el.id === id ? { ...el, unlocked: !el.unlocked } : el,
+        setCharacters(chars =>
+            chars.map(char =>
+                char.id === activeCharacterId
+                    ? {
+                        ...char,
+                        effects: char.effects.map(el =>
+                            el.id === id ? { ...el, unlocked: !el.unlocked } : el,
+                        ),
+                    }
+                    : char,
+            ),
         );
+        showNotification(effect);
+    };
 
-        if (selectedEffect && !selectedEffect.unlocked) {
-            sentNotification(effect);
-        }
-
-        setEffects(temp);
+    const switchCharacter = (id: string) => {
+        setActiveCharacterId(id);
     };
 
     return (
         <DataContext.Provider
-            value={{ effects, toggleUnlockedEffect, notificationActive, notificationMsg }}>
+            value={{ characters, activeCharacterId, switchCharacter, toggleUnlockedEffect, notificationActive, notificationMsg }}>
             {children}
         </DataContext.Provider>
     );

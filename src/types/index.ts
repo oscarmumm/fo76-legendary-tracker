@@ -7,4 +7,10 @@ export type LegendaryEffect = {
     race: ('human' | 'ghoul')[];
     bounty: boolean;
     unlocked: boolean;
-}
+};
+
+export type Character = {
+    id: string;
+    name: string;
+    effects: LegendaryEffect[];
+};
