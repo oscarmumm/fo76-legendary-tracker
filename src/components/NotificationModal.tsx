@@ -10,7 +10,7 @@ export const NotificationModal = ({ effect }: NotificationModalProps) => {
     return (
         <motion.div
             variants={modalBackgroundVariants}
-            className="modal"
+            className="notification-modal"
             initial="hidden"
             animate="visible"
             exit="exit"

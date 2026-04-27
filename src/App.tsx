@@ -12,6 +12,7 @@ import { Filters } from './components/Filters';
 
 // ICONS
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { CharacterFormModal } from './components/CharacterFormModal';
 
 const filterListAnimation = {
     visible: {
@@ -362,6 +363,9 @@ function App() {
                 {notificationActive && (
                     <NotificationModal effect={notificationMsg} />
                 )}
+            </AnimatePresence>
+            <AnimatePresence>
+                <CharacterFormModal />
             </AnimatePresence>
         </div>
     );
