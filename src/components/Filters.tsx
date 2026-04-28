@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 // ICONS
-import { FaUnlock, FaLock, FaRadiation } from 'react-icons/fa';
-import { IoMdPerson } from 'react-icons/io';
-import { FaGun } from 'react-icons/fa6';
-import { LuSword } from 'react-icons/lu';
-import { GiBlackKnightHelm, GiShoulderArmor } from 'react-icons/gi';
-import { GiWantedReward } from 'react-icons/gi';
-import { FaBook } from 'react-icons/fa';
+// import { FaUnlock, FaLock, FaRadiation } from 'react-icons/fa';
+// import { IoMdPerson } from 'react-icons/io';
+// import { FaGun } from 'react-icons/fa6';
+// import { LuSword } from 'react-icons/lu';
+// import { GiBlackKnightHelm, GiShoulderArmor } from 'react-icons/gi';
+// import { GiWantedReward } from 'react-icons/gi';
+// import { FaBook } from 'react-icons/fa';
 
 interface FilterProps {
     onFilterChange: (filter: string) => void;
@@ -24,12 +24,12 @@ export const Filters = ({ onFilterChange }: FilterProps) => {
         onFilterChange(value);
     };
     return (
-        <div>
-            <label className="mx-3 text-lg font-semibold">Filtros:</label>
+        <div className='w-full lg:w-auto flex flex-col items-start lg:flex-row lg:items-center justify-center'>
+            <label className="m-1 text-lg font-semibold">Filtros:</label>
             <select
                 value={activeFilter}
                 onChange={handleChange}
-                className="p-3 min-w-72 bg-gray-700 hover:bg-gray-600 rounded-xl cursor-pointer text-slate-50 border-none outline-none">
+                className="p-3 w-full md:w-72 bg-gray-700 hover:bg-gray-600 rounded-xl cursor-pointer text-slate-50 border-none outline-none">
                 <option value="all">Todos los efectos</option>
                 <option value="locked">Bloqueados</option>
                 <option value="unlocked">Desbloqueados</option>

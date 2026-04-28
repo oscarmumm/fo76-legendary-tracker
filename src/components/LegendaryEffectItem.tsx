@@ -33,7 +33,7 @@ export const LegendaryEffectItem = ({
     };
 
     return (
-        <li key={effect.id} className="flex flex-col mt-3 text-lg">
+        <li className="flex flex-col mt-3 text-lg">
             <div className="flex justify-between">
                 <div
                     onClick={toggleDescription}
@@ -46,7 +46,7 @@ export const LegendaryEffectItem = ({
                     </div>
                     <div className="flex">
                         {effect.category.map((cat) => (
-                            <span className="ml-1 text-sky-400">
+                            <span key={cat} className="ml-1 text-sky-400">
                                 {categoryIcons[cat]}
                             </span>
                         ))}

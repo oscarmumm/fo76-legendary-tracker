@@ -31,6 +31,8 @@ function App() {
     const [threeStarEffectsVisible, setThreeStarEffectsVisible] =
         useState(false);
     const [fourStarEffectsVisible, setFourStarEffectsVisible] = useState(false);
+    const [characterFormModalActive, setCharacterFormModalActive] =
+        useState<boolean>(false);
     const {
         characters,
         activeCharacterId,
@@ -121,16 +123,23 @@ function App() {
     }, [filter, effects]);
 
     return (
-        <div className="bg-gray-900 text-slate-50 min-h-screen flex flex-col justify-between">
-            <div>
+        <div className="bg-gray-900 text-slate-50 min-h-screen flex flex-col items-center justify-between ">
+            <div className=' max-w-440'>
                 <Header />
-                <main className="bg-gray-900 text-slate-50 flex flex-col">
-                    <div className='p-3 m-3 flex flex-col items-center justify-center md:flex-row bg-gray-800 rounded-xl gap-3'>
+                <main className="bg-gray-900 text-slate-50 flex flex-col items-center">
+                    {/* FILTERS AND CHARACTER SELECTORS SECTION */}
+                    <div className="p-3 m-3 flex flex-col w-fit items-center justify-center lg:flex-row bg-gray-800 rounded-xl gap-3">
                         <CharacterSelector />
+                        <button
+                            className="p-3 bg-sky-500 w-full md:max-w-72 rounded-xl cursor-pointer outline-none"
+                            onClick={() => setCharacterFormModalActive(true)}>
+                            Edit Character Name
+                        </button>
                         <Filters onFilterChange={(f) => setFilter(f)} />
                     </div>
                     {/* EFFECTS COLUMNS SECTION */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 items-start">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 items-start w-full">
+                        {/* COLUMN 1 */}
                         <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
                             <div className="flex justify-between items-center">
                                 <h2 className="text-center font-bold">
@@ -153,7 +162,6 @@ function App() {
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
-
                             {oneStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
@@ -187,6 +195,7 @@ function App() {
                                 </motion.ul>
                             )}
                         </section>
+                        {/* COLUMN 2 */}
                         <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
                             <div className="flex justify-between items-center">
                                 <h2 className="text-center font-bold">
@@ -209,7 +218,6 @@ function App() {
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
-
                             {twoStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
@@ -243,6 +251,7 @@ function App() {
                                 </motion.ul>
                             )}
                         </section>
+                        {/* COLUMN 3 */}
                         <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
                             <div className="flex justify-between items-center">
                                 <h2 className="text-center font-bold">
@@ -265,7 +274,6 @@ function App() {
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
-
                             {threeStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
@@ -299,6 +307,7 @@ function App() {
                                 </motion.ul>
                             )}
                         </section>
+                        {/* COLUMN 4 */}
                         <section className="p-5 m-3 text-xl shadow-md rounded-xl bg-gray-800">
                             <div className="flex justify-between items-center">
                                 <h2 className="text-center font-bold">
@@ -321,7 +330,6 @@ function App() {
                                     <MdKeyboardArrowDown />
                                 </button>
                             </div>
-
                             {fourStarEffectsVisible && (
                                 <motion.ul
                                     variants={filterListAnimation}
@@ -365,7 +373,13 @@ function App() {
                 )}
             </AnimatePresence>
             <AnimatePresence>
-                <CharacterFormModal />
+                {characterFormModalActive && (
+                    <CharacterFormModal
+                        closeCharacterFormModal={() =>
+                            setCharacterFormModalActive(false)
+                        }
+                    />
+                )}
             </AnimatePresence>
         </div>
     );

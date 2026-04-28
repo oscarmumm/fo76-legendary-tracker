@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { LegendaryEffect, Character } from '../types';
+import type { Character } from '../types';
 import { legendaryEffects } from '../db/LegendaryEffectsDB';
 import { useNotification} from '../hooks/useNotification';
 
@@ -11,6 +11,7 @@ type DataContextType = {
     toggleUnlockedEffect: (id: string, effect: string) => void;
     notificationActive: boolean;
     notificationMsg: string;
+    updateCharacterName: (id:string, newName:string) => void;
 };
 
 export const DataContext = createContext<DataContextType | undefined>(
@@ -60,9 +61,13 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         setActiveCharacterId(id);
     };
 
+    const updateCharacterName = (id: string, newName: string) => {
+        setCharacters(prev => prev.map(c => c.id === id ? {...c, name: newName} : c))
+    }
+
     return (
         <DataContext.Provider
-            value={{ characters, activeCharacterId, switchCharacter, toggleUnlockedEffect, notificationActive, notificationMsg }}>
+            value={{ characters, activeCharacterId, switchCharacter, toggleUnlockedEffect, notificationActive, notificationMsg, updateCharacterName }}>
             {children}
         </DataContext.Provider>
     );

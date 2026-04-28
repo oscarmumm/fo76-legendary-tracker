@@ -9,8 +9,8 @@ type NotificationModalProps = {
 export const NotificationModal = ({ effect }: NotificationModalProps) => {
     return (
         <motion.div
-            variants={modalBackgroundVariants}
             className="notification-modal"
+            variants={modalBackgroundVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -24,8 +24,8 @@ export const NotificationModal = ({ effect }: NotificationModalProps) => {
                 transition={{ duration: 0.2, ease: 'easeInOut' }}>
                 <p className="text-slate-50 font-semibold text-lg flex items-center justify-center">
                     <span>Desbloqueaste</span>
-                    <span className='text-yellow-400 ml-2'>{effect}</span>
-                    <span className='text-slate-50 ml-2'>!!</span>
+                    <span className="text-yellow-400 ml-2">{effect}</span>
+                    <span className="text-slate-50 ml-2">!!</span>
                     <FaUnlock className="ml-3 text-green-500" />
                 </p>
             </motion.div>
