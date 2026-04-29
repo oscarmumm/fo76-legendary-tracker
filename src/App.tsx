@@ -5,15 +5,15 @@ import { AnimatePresence, motion } from 'motion/react';
 import { Header } from './components/Header';
 import { useData } from './contexts/DataContext';
 import { LegendaryEffectItem } from './components/LegendaryEffectItem';
-import { NotificationModal } from './components/NotificationModal';
+import { NotificationModal } from './components/Modals/NotificationModal';
 import { Footer } from './components/Footer';
 import { CharacterSelector } from './components/CharacterSelector';
 import { Filters } from './components/Filters';
 
 // ICONS
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { CharacterFormModal } from './components/CharacterFormModal';
-import { MdOutlineHelpOutline } from "react-icons/md";
+import { CharacterFormModal } from './components/Modals/CharacterFormModal';
+import { HelpModal } from './components/Modals/HelpModal';
 
 const filterListAnimation = {
     visible: {
@@ -34,6 +34,7 @@ function App() {
     const [fourStarEffectsVisible, setFourStarEffectsVisible] = useState(false);
     const [characterFormModalActive, setCharacterFormModalActive] =
         useState<boolean>(false);
+    const [helpModalActive, setHelpModalActive] = useState<boolean>(false);
     const {
         characters,
         activeCharacterId,
@@ -125,8 +126,8 @@ function App() {
 
     return (
         <div className="bg-gray-900 text-slate-50 min-h-screen flex flex-col items-center justify-between ">
-            <div className=' max-w-440'>
-                <Header />
+            <div className=" max-w-440">
+                <Header openHelpModal={() => setHelpModalActive(true)} />
                 <main className="bg-gray-900 text-slate-50 flex flex-col items-center">
                     {/* FILTERS AND CHARACTER SELECTORS SECTION */}
                     <div className="p-3 m-3 flex flex-col w-fit items-center justify-center lg:flex-row bg-gray-800 rounded-xl gap-3">
@@ -379,6 +380,13 @@ function App() {
                         closeCharacterFormModal={() =>
                             setCharacterFormModalActive(false)
                         }
+                    />
+                )}
+            </AnimatePresence>
+            <AnimatePresence>
+                {helpModalActive && (
+                    <HelpModal
+                        closeHelpModal={() => setHelpModalActive(false)}
                     />
                 )}
             </AnimatePresence>

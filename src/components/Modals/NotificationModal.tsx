@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { modalBackgroundVariants, modalWindowVariants } from '../animations';
+import { modalBackgroundVariants, modalWindowVariants } from '../../animations';
 import { FaUnlock } from 'react-icons/fa';
 
 type NotificationModalProps = {

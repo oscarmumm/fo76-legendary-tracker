@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useData } from '../contexts/DataContext';
+import { useData } from '../../contexts/DataContext';
 import { motion } from 'motion/react';
-import { modalBackgroundVariants, modalWindowVariants } from '../animations';
+import { modalBackgroundVariants, modalWindowVariants } from '../../animations';
 import { IoMdClose } from 'react-icons/io';
 
 interface CharacterFormModalProps {
