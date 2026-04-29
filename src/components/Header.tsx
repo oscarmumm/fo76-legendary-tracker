@@ -1,8 +1,12 @@
 import { FaGear } from 'react-icons/fa6';
+import { MdOutlineHelpOutline } from 'react-icons/md';
 
 export const Header = () => {
     return (
-        <header>
+        <header className='relative'>
+            <button className='absolute top-3 right-3 text-3xl p-3 cursor-pointer hover:scale-105 hover:bg-gray-700 rounded-xl'>
+                <MdOutlineHelpOutline />
+            </button>
             <h1 className='p-3 text-xl text-center italic'>
                 <div className='flex items-center justify-center text-3xl'>
                     <span className='font-semibold'>Fallout</span>

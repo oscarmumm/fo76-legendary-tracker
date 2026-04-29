@@ -13,6 +13,7 @@ import { Filters } from './components/Filters';
 // ICONS
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { CharacterFormModal } from './components/CharacterFormModal';
+import { MdOutlineHelpOutline } from "react-icons/md";
 
 const filterListAnimation = {
     visible: {
@@ -131,7 +132,7 @@ function App() {
                     <div className="p-3 m-3 flex flex-col w-fit items-center justify-center lg:flex-row bg-gray-800 rounded-xl gap-3">
                         <CharacterSelector />
                         <button
-                            className="p-3 bg-sky-500 w-full md:max-w-72 rounded-xl cursor-pointer outline-none"
+                            className="p-3 bg-sky-500 w-full md:max-w-72 rounded-xl cursor-pointer outline-none self-end"
                             onClick={() => setCharacterFormModalActive(true)}>
                             Edit Character Name
                         </button>

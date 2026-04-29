@@ -47,15 +47,23 @@ export const CharacterFormModal = ({
                 <label className="mb-8">Editar nombre del personaje</label>
                 <input
                     className="p-3 mb-8 bg-slate-50 text-slate-900 rounded-xl outline-none"
-                    onChange={(e) => setCharacterName(e.target.value.trimStart())}
+                    onChange={(e) =>
+                        setCharacterName(e.target.value.trimStart())
+                    }
                     type="text"
                     value={characterName}
-                    maxLength={20}
+                    maxLength={30}
                 />
                 <div className="grid grid-cols-2 gap-3">
                     <button
                         className="p-3 min-w-24 bg-sky-500 hover:bg-sky-400 rounded-xl cursor-pointer"
-                        onClick={() => updateCharacterName(activeCharacterId, characterName)}>
+                        onClick={(e) => {
+                            updateCharacterName(
+                                activeCharacterId,
+                                characterName,
+                            );
+                            closeModal(e);
+                        }}>
                         Guardar
                     </button>
                     <button
