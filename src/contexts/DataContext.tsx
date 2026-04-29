@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import type { Character } from '../types';
 import { legendaryEffects } from '../db/LegendaryEffectsDB';
-import { useNotification} from '../hooks/useNotification';
+import { useNotification } from '../hooks/useNotification';
 
 type DataContextType = {
     characters: Character[];
@@ -11,7 +11,7 @@ type DataContextType = {
     toggleUnlockedEffect: (id: string, effect: string) => void;
     notificationActive: boolean;
     notificationMsg: string;
-    updateCharacterName: (id:string, newName:string) => void;
+    updateCharacterName: (id: string, newName: string) => void;
 };
 
 export const DataContext = createContext<DataContextType | undefined>(
@@ -33,28 +33,37 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         }));
     };
 
-    const [characters, setCharacters] = useState<Character[]>(initializeCharacters);
-    const [activeCharacterId, setActiveCharacterId] = useState<string>('character-1');
-    const {notificationActive, notificationMsg, showNotification} = useNotification();
+    const [characters, setCharacters] =
+        useState<Character[]>(initializeCharacters);
+    const [activeCharacterId, setActiveCharacterId] =
+        useState<string>('character-1');
+    const { notificationActive, notificationMsg, showNotification } =
+        useNotification();
 
     useEffect(() => {
         localStorage.setItem('fo76trackerData', JSON.stringify(characters));
     }, [characters]);
 
     const toggleUnlockedEffect = (id: string, effect: string) => {
-        setCharacters(chars =>
-            chars.map(char =>
-                char.id === activeCharacterId
-                    ? {
+        setCharacters((chars) =>
+            chars.map((char) => {
+                if (char.id === activeCharacterId) {
+                    return {
                         ...char,
-                        effects: char.effects.map(el =>
-                            el.id === id ? { ...el, unlocked: !el.unlocked } : el,
-                        ),
-                    }
-                    : char,
-            ),
+                        effects: char.effects.map((el) => {
+                            if (el.id === id) {
+                                if (!el.unlocked) {
+                                    showNotification(effect);
+                                }
+                                return { ...el, unlocked: !el.unlocked };
+                            }
+                            return el;
+                        }),
+                    };
+                }
+                return char;
+            }),
         );
-        showNotification(effect);
     };
 
     const switchCharacter = (id: string) => {
@@ -62,12 +71,23 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const updateCharacterName = (id: string, newName: string) => {
-        setCharacters(prev => prev.map(c => c.id === id ? {...c, name: newName} : c))
-    }
+        setCharacters((prev) =>
+            prev.map((c) => (c.id === id ? { ...c, name: newName } : c)),
+        );
+    };
 
     return (
         <DataContext.Provider
-            value={{ characters, activeCharacterId, switchCharacter, toggleUnlockedEffect, notificationActive, notificationMsg, updateCharacterName }}>
+            value={{
+                characters,
+                activeCharacterId,
+                switchCharacter,
+                toggleUnlockedEffect,
+                notificationActive,
+                notificationMsg,
+                updateCharacterName,
+            }}
+        >
             {children}
         </DataContext.Provider>
     );

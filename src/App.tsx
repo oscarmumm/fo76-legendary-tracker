@@ -35,6 +35,7 @@ function App() {
     const [characterFormModalActive, setCharacterFormModalActive] =
         useState<boolean>(false);
     const [helpModalActive, setHelpModalActive] = useState<boolean>(false);
+    
     const {
         characters,
         activeCharacterId,
