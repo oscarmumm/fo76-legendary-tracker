@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { Header } from './components/Header';
 import { useData } from './contexts/DataContext';
 import { LegendaryEffectItem } from './components/LegendaryEffectItem';
-import { NotificationModal } from './components/Modals/NotificationModal';
+//import { NotificationModal } from './components/Modals/NotificationModal';
 import { Footer } from './components/Footer';
 import { CharacterSelector } from './components/CharacterSelector';
 import { Filters } from './components/Filters';
@@ -14,6 +14,7 @@ import { Filters } from './components/Filters';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { CharacterFormModal } from './components/Modals/CharacterFormModal';
 import { HelpModal } from './components/Modals/HelpModal';
+import { UpdateBanner } from './components/Modals/UpdateBanner';
 
 const filterListAnimation = {
     visible: {
@@ -27,6 +28,18 @@ const filterListAnimation = {
 };
 
 function App() {
+    const [updateAvailable, setUpdateAvailable] = useState(false);
+
+    useEffect(() => {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener('message', (event) => {
+                if (event.data.type === 'NEW_VERSION_AVAILABLE') {
+                    setUpdateAvailable(true);
+                }
+            });
+        }
+    }, []);
+
     const [oneStarEffectsVisible, setOneStarEffectsVisible] = useState(false);
     const [twoStarEffectsVisible, setTwoStarEffectsVisible] = useState(false);
     const [threeStarEffectsVisible, setThreeStarEffectsVisible] =
@@ -35,13 +48,13 @@ function App() {
     const [characterFormModalActive, setCharacterFormModalActive] =
         useState<boolean>(false);
     const [helpModalActive, setHelpModalActive] = useState<boolean>(false);
-    
+
     const {
         characters,
         activeCharacterId,
         toggleUnlockedEffect,
-        notificationActive,
-        notificationMsg,
+        // notificationActive,
+        // notificationMsg,
     } = useData();
 
     const effects =
@@ -136,7 +149,7 @@ function App() {
                         <button
                             className="p-3 bg-sky-500 w-full md:max-w-72 rounded-xl cursor-pointer outline-none self-end"
                             onClick={() => setCharacterFormModalActive(true)}>
-                            Edit Character Name
+                            Editar nombre del personaje
                         </button>
                         <Filters onFilterChange={(f) => setFilter(f)} />
                     </div>
@@ -370,11 +383,7 @@ function App() {
                 </main>
             </div>
             <Footer />
-            <AnimatePresence>
-                {notificationActive && (
-                    <NotificationModal effect={notificationMsg} />
-                )}
-            </AnimatePresence>
+            {updateAvailable && <UpdateBanner />}
             <AnimatePresence>
                 {characterFormModalActive && (
                     <CharacterFormModal
@@ -391,6 +400,11 @@ function App() {
                     />
                 )}
             </AnimatePresence>
+            {/* <AnimatePresence>
+                    {notificationActive && (
+                        <NotificationModal effect={notificationMsg} />
+                    )}
+                </AnimatePresence> */}
         </div>
     );
 }

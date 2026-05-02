@@ -1,5 +1,5 @@
 // Variables de configuración
-const CACHE_NAME = 'fo76-cache-v2';
+const CACHE_NAME = 'fo76-cache-v3';
 const URLS_TO_CACHE = [
     '/',
     '/manifest.json',
@@ -18,11 +18,8 @@ const URLS_TO_CACHE = [
 
 // Instalando el service worker
 self.addEventListener('install', (event) => {
-    console.log('Service worker instalando...');
-
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            console.log('Cacheando archivos críticos');
             return cache.addAll(URLS_TO_CACHE);
         }),
     );
@@ -32,14 +29,11 @@ self.addEventListener('install', (event) => {
 
 // Cuando se activa el service worker
 self.addEventListener('activate', (event) => {
-    console.log('Service worker activando...');
-
     event.waitUntil(
         caches.keys().then((cacheNames) => {
             return Promise.all(
                 cacheNames.map((cacheName) => {
                     if (cacheName !== CACHE_NAME) {
-                        console.log('Eliminando caché antigua: ', cacheName);
                         return caches.delete(cacheName);
                     }
                 }),
@@ -60,18 +54,27 @@ self.addEventListener('fetch', (event) => {
     }
 
     // Estrategia para assets (JS, CSS, PNG): Cache First
-    if (url.pathname.includes('/assets/') || url.pathname.endsWith('.png') || url.pathname.endsWith('.ico')) {
+    if (
+        url.pathname.includes('/assets/') ||
+        url.pathname.endsWith('.png') ||
+        url.pathname.endsWith('.ico')
+    ) {
         event.respondWith(
             caches.match(request).then((response) => {
-                return response || fetch(request).then((response) => {
-                    if (response && response.status === 200) {
-                        const responseToCache = response.clone();
-                        caches.open(CACHE_NAME).then((cache) => {
-                            cache.put(request, responseToCache);
-                        });
-                    }
-                    return response;
-                }).catch(() => new Response('Offline', { status: 503 }));
+                return (
+                    response ||
+                    fetch(request)
+                        .then((response) => {
+                            if (response && response.status === 200) {
+                                const responseToCache = response.clone();
+                                caches.open(CACHE_NAME).then((cache) => {
+                                    cache.put(request, responseToCache);
+                                });
+                            }
+                            return response;
+                        })
+                        .catch(() => new Response('Offline', { status: 503 }))
+                );
             }),
         );
         return;
@@ -90,7 +93,11 @@ self.addEventListener('fetch', (event) => {
                     }
                     return response;
                 })
-                .catch(() => caches.match(request) || new Response('Offline', { status: 503 })),
+                .catch(
+                    () =>
+                        caches.match(request) ||
+                        new Response('Offline', { status: 503 }),
+                ),
         );
         return;
     }
@@ -98,15 +105,31 @@ self.addEventListener('fetch', (event) => {
     // Por defecto: Cache First
     event.respondWith(
         caches.match(request).then((response) => {
-            return response || fetch(request).then((response) => {
-                if (response && response.status === 200) {
-                    const responseToCache = response.clone();
-                    caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(request, responseToCache);
-                    });
-                }
-                return response;
-            }).catch(() => new Response('Offline', { status: 503 }));
+            return (
+                response ||
+                fetch(request)
+                    .then((response) => {
+                        if (response && response.status === 200) {
+                            const responseToCache = response.clone();
+                            caches.open(CACHE_NAME).then((cache) => {
+                                cache.put(request, responseToCache);
+                            });
+                        }
+                        return response;
+                    })
+                    .catch(() => new Response('Offline', { status: 503 }))
+            );
         }),
     );
+});
+
+// Notificamos que hay una nueva version disponible
+self.addEventListener('message', (event) => {
+    if (event.data === 'checkForUpdate') {
+        self.clients.matchAll().then((clients) => {
+            clients.forEach((client) => {
+                client.postMessage({ type: 'NEW_VERSION_AVAILABLE' });
+            });
+        });
+    }
 });

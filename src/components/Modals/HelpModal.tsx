@@ -27,7 +27,7 @@ export const HelpModal = ({ closeHelpModal }: HelpModalProps) => {
             transition={{ duration: 0.2, ease: 'easeInOut' }}
         >
             <motion.div
-                className='p-5 m-3 text-xl relative flex flex-col min-w-72 max-w-3xl max-h-150 overflow-auto italic bg-gray-800 rounded-xl'
+                className='p-5 m-3 text-lg relative flex flex-col min-w-72 max-w-3xl max-h-150 overflow-auto italic bg-gray-800 rounded-xl'
                 variants={modalWindowVariants}
                 initial='hidden'
                 animate='visible'

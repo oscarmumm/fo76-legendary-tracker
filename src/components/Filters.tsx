@@ -1,14 +1,5 @@
 import { useState } from 'react';
 
-// ICONS
-// import { FaUnlock, FaLock, FaRadiation } from 'react-icons/fa';
-// import { IoMdPerson } from 'react-icons/io';
-// import { FaGun } from 'react-icons/fa6';
-// import { LuSword } from 'react-icons/lu';
-// import { GiBlackKnightHelm, GiShoulderArmor } from 'react-icons/gi';
-// import { GiWantedReward } from 'react-icons/gi';
-// import { FaBook } from 'react-icons/fa';
-
 interface FilterProps {
     onFilterChange: (filter: string) => void;
 }

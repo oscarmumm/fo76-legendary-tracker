@@ -14,7 +14,7 @@ export const NotificationModal = ({ effect }: NotificationModalProps) => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            transition={{ duration: 0.2, ease: 'easeInOut' }}>
+            transition={{ duration: 0.2, ease: 'linear' }}>
             <motion.div
                 className="px-10 py-5 flex flex-col rounded-tl-xl rounded-bl-xl bg-gray-700"
                 variants={modalWindowVariants}
