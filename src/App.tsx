@@ -31,13 +31,37 @@ function App() {
     const [updateAvailable, setUpdateAvailable] = useState(false);
 
     useEffect(() => {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.addEventListener('message', (event) => {
-                if (event.data.type === 'NEW_VERSION_AVAILABLE') {
-                    setUpdateAvailable(true);
-                }
-            });
+        if (!('serviceWorker' in navigator)) {
+            return;
         }
+
+        const checkForUpdates = () => {
+            if (navigator.onLine && navigator.serviceWorker.controller) {
+                navigator.serviceWorker.controller.postMessage('checkForUpdate');
+            }
+        };
+
+        const handleSWMessage = (event: MessageEvent) => {
+            if (event.data?.type === 'NEW_VERSION_AVAILABLE') {
+                setUpdateAvailable(true);
+            }
+        };
+
+        navigator.serviceWorker.addEventListener('message', handleSWMessage);
+        navigator.serviceWorker.ready.then(checkForUpdates);
+        window.addEventListener('online', checkForUpdates);
+
+        const updateInterval = window.setInterval(() => {
+            if (navigator.onLine) {
+                checkForUpdates();
+            }
+        }, 30 * 60 * 1000);
+
+        return () => {
+            navigator.serviceWorker.removeEventListener('message', handleSWMessage);
+            window.removeEventListener('online', checkForUpdates);
+            window.clearInterval(updateInterval);
+        };
     }, []);
 
     const [oneStarEffectsVisible, setOneStarEffectsVisible] = useState(false);
