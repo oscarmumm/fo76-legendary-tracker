@@ -20,7 +20,7 @@ export const Footer = () => {
                     Creado por <strong className='font-bold'>SrGoodneighbor</strong> ™ 2026
                 </p>
                 <p className="p-3 bg-gray-800">
-                    Version 1.0.0-beta.1
+                    Version 1.0.2
                 </p>
                 <div className="p-3 flex text-3xl">
                     <a
