@@ -1,5 +1,5 @@
 // Variables de configuración
-const CACHE_NAME = 'fo76-cache-v4';
+const CACHE_NAME = 'fo76-cache-v5';
 const URLS_TO_CACHE = [
     '/',
     '/manifest.json',
@@ -51,9 +51,17 @@ async function checkForUpdate() {
 
 // Instalando el service worker
 self.addEventListener('install', (event) => {
+    console.log('📥 Instalando service worker v5...');
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(URLS_TO_CACHE);
+            console.log('📦 Pre-cacheando assets...');
+            return cache.addAll(URLS_TO_CACHE).then(() => {
+                console.log('✅ Assets pre-cacheados exitosamente');
+                self.skipWaiting();
+            }).catch((error) => {
+                console.error('❌ Error pre-cacheando:', error);
+                self.skipWaiting();
+            });
         }),
     );
 });
@@ -61,18 +69,58 @@ self.addEventListener('install', (event) => {
 // Cuando se activa el service worker
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
+        (async () => {
+            // Limpiar caches antiguos
+            const cacheNames = await caches.keys();
+            await Promise.all(
                 cacheNames.map((cacheName) => {
                     if (cacheName !== CACHE_NAME) {
+                        console.log('🗑️ Eliminando cache antiguo:', cacheName);
                         return caches.delete(cacheName);
                     }
                 }),
             );
-        }),
+
+            // Pre-cachear todos los assets en la nueva versión
+            try {
+                const cache = await caches.open(CACHE_NAME);
+                const cachedUrls = await cache.keys();
+                const cachedUrlStrings = cachedUrls.map(req => req.url);
+
+                const urlsToAdd = URLS_TO_CACHE.filter(
+                    url => !cachedUrlStrings.some(cachedUrl => cachedUrl.includes(url))
+                );
+
+                if (urlsToAdd.length > 0) {
+                    console.log('📦 Pre-cacheando nuevos assets:', urlsToAdd);
+                    await cache.addAll(urlsToAdd);
+                }
+            } catch (error) {
+                console.error('❌ Error pre-cacheando assets:', error);
+            }
+
+            return self.clients.claim();
+        })(),
     );
-    return self.clients.claim();
 });
+
+async function networkFirst(request) {
+    try {
+        const response = await fetch(request);
+        if (response && response.status === 200) {
+            const cache = await caches.open(CACHE_NAME);
+            cache.put(request, response.clone());
+        }
+        return response;
+    } catch (error) {
+        const cache = await caches.open(CACHE_NAME);
+        const cachedResponse = await cache.match(request);
+        if (cachedResponse) {
+            return cachedResponse;
+        }
+        return new Response('Offline', { status: 503 });
+    }
+}
 
 async function cacheFirst(request) {
     const cache = await caches.open(CACHE_NAME);
@@ -97,20 +145,24 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
+    // Assets - usar networkFirst para obtener versión más nueva
     if (
         url.pathname.includes('/assets/') ||
         url.pathname.endsWith('.png') ||
-        url.pathname.endsWith('.ico')
+        url.pathname.endsWith('.ico') ||
+        url.pathname.endsWith('.js') ||
+        url.pathname.endsWith('.css')
     ) {
         event.respondWith(
-            cacheFirst(request).catch(() =>
+            networkFirst(request).catch(() =>
                 new Response('Offline', { status: 503 }),
             ),
         );
         return;
     }
 
-    if (url.pathname === '/' || url.pathname.endsWith('.html')) {
+    // HTML y manifest - usar cacheFirst
+    if (url.pathname === '/' || url.pathname.endsWith('.html') || url.pathname.endsWith('.json')) {
         event.respondWith(
             cacheFirst(request).catch(() =>
                 new Response('Offline', { status: 503 }),
@@ -119,6 +171,7 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
+    // Por defecto - cacheFirst
     event.respondWith(
         cacheFirst(request).catch(() =>
             new Response('Offline', { status: 503 }),
