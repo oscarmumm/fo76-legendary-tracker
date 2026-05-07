@@ -135,8 +135,11 @@ function App() {
                 setFilteredData(effects);
         }
         setFilteredData(temp);
-        openAllEffectsColumns();
     }, [filter, effects]);
+
+    useEffect(() => {
+        openAllEffectsColumns();
+    }, [filter])
 
     return (
         <div className="bg-gray-900 text-slate-50 min-h-screen flex flex-col items-center justify-between ">
