@@ -2,7 +2,7 @@
     "name": "Fallout 76 Legendary Tracker",
     "short_name": "Fo76 Legendaries",
     "description": "Aplicación para gestionar efectos legendarios en Fallout 76",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "theme_color": "#101828",
     "background_color": "#101828",
     "display": "standalone",

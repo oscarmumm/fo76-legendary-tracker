@@ -1,5 +1,5 @@
 // Variables de configuración
-const CACHE_NAME = 'fo76-cache-v3';
+const CACHE_NAME = 'fo76-cache-v4';
 const URLS_TO_CACHE = [
     '/',
     '/manifest.json',
