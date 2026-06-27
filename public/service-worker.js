@@ -181,7 +181,9 @@ self.addEventListener('fetch', (event) => {
 
 // Verifica si hay versión nueva disponible
 self.addEventListener('message', (event) => {
-    if (event.data === 'checkForUpdate') {
+    const message = event.data;
+
+    if (message === 'checkForUpdate') {
         event.waitUntil(
             (async () => {
                 const hasUpdate = await checkForUpdate();
@@ -192,7 +194,7 @@ self.addEventListener('message', (event) => {
         );
     }
 
-    if (event.data === 'SKIP_WAITING') {
-        self.skipWaiting();
+    if (message === 'SKIP_WAITING' || message?.type === 'SKIP_WAITING') {
+        event.waitUntil(self.skipWaiting());
     }
 });

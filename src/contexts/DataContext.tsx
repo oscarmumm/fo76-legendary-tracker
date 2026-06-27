@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { Character } from '../types';
+import type { Character, LegendaryEffect } from '../types';
 import { legendaryEffects } from '../db/LegendaryEffectsDB';
 import { useNotification } from '../hooks/useNotification';
 
@@ -19,13 +19,39 @@ export const DataContext = createContext<DataContextType | undefined>(
 );
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
-    // Declarar la función ANTES de usarla
+    const mergeEffects = (savedEffects?: LegendaryEffect[]) => {
+        if (!Array.isArray(savedEffects)) {
+            return legendaryEffects;
+        }
+
+        const savedById = new Map(savedEffects.map((effect) => [effect.id, effect]));
+        const baseIds = new Set(legendaryEffects.map((effect) => effect.id));
+
+        const merged = legendaryEffects.map((base) => ({
+            ...base,
+            unlocked: savedById.get(base.id)?.unlocked ?? base.unlocked,
+        }));
+
+        const extraSaved = savedEffects.filter((effect) => !baseIds.has(effect.id));
+
+        return [...merged, ...extraSaved];
+    };
+
     const initializeCharacters = (): Character[] => {
         const stored = localStorage.getItem('fo76trackerData');
         if (stored) {
-            return JSON.parse(stored);
+            try {
+                const parsed = JSON.parse(stored) as Character[];
+                return parsed.map((char) => ({
+                    ...char,
+                    effects: mergeEffects(char.effects),
+                }));
+            } catch {
+                // Si el JSON está corrupto, conservar los datos existentes es imposible;
+                // inicializamos con los valores por defecto actualizados.
+            }
         }
-        // Crear 5 personajes vacíos
+
         return Array.from({ length: 5 }, (_, i) => ({
             id: `character-${i + 1}`,
             name: `Personaje ${i + 1}`,

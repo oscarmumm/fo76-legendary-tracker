@@ -1251,6 +1251,17 @@ export const legendaryEffects: LegendaryEffect[] = [
         unlocked: false,
     },
     {
+        id: '152',
+        stars: 4,
+        name: 'Costalero',
+        description:
+            '+30 capacidad de carga',
+        category: ['armor', 'power armor'],
+        race: ['human', 'ghoul'],
+        bounty: false,
+        unlocked: false,
+    },
+    {
         id: '118',
         stars: 4,
         name: 'Electricista',
@@ -1289,6 +1300,17 @@ export const legendaryEffects: LegendaryEffect[] = [
         name: 'Frío glacial',
         description: '+20 de daño por hielo',
         category: ['melee'],
+        race: ['human', 'ghoul'],
+        bounty: false,
+        unlocked: false,
+    },
+    {
+        id: '155',
+        stars: 4,
+        name: 'Golpeado',
+        description:
+            'El daño aumenta hasta un 120% a medida que disminuye la durabilidad del arma',
+        category: ['ranged', 'melee'],
         race: ['human', 'ghoul'],
         bounty: false,
         unlocked: false,
@@ -1423,6 +1445,18 @@ export const legendaryEffects: LegendaryEffect[] = [
         bounty: false,
         unlocked: false,
     },
+    
+    {
+        id: '153',
+        stars: 4,
+        name: 'Rabioso',
+        description:
+            'Al ser golpeado inflinge un +3% de daño durante 10 segundos',
+        category: ['armor', 'power armor'],
+        race: ['human', 'ghoul'],
+        bounty: false,
+        unlocked: false,
+    },
     {
         id: '134',
         stars: 4,
@@ -1490,6 +1524,17 @@ export const legendaryEffects: LegendaryEffect[] = [
         unlocked: false,
     },
     {
+        id: '154',
+        stars: 4,
+        name: 'Saciado',
+        description:
+            '(Humano) Las muertes restauran el hambre y la sed. (Necrófago) Las muertes restauran la ferocidad',
+        category: ['ranged', 'melee'],
+        race: ['human', 'ghoul'],
+        bounty: false,
+        unlocked: false,
+    },
+    {
         id: '140',
         stars: 4,
         name: 'Víbora',
@@ -1509,6 +1554,17 @@ export const legendaryEffects: LegendaryEffect[] = [
         category: ['power armor'],
         race: ['human', 'ghoul'],
         bounty: false,
+        unlocked: false,
+    },
+    {
+        id: '156',
+        stars: 4,
+        name: 'Vector',
+        description:
+            '+10% de presición en VATS contra objetivos lejanos',
+        category: ['armor', 'power armor'],
+        race: ['human', 'ghoul'],
+        bounty: true,
         unlocked: false,
     },
 ];
